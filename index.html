@@ -8,6 +8,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -62,6 +64,11 @@
       border: 1px solid #FDE68A;
     }
 
+    /* Lightbox Modal */
+    .modal-active {
+      display: flex !important;
+    }
+
     ::-webkit-scrollbar {
       width: 8px;
     }
@@ -96,17 +103,20 @@
       </div>
 
       <!-- Navigation Links -->
-      <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-pharaoh-muted">
+      <nav class="hidden md:flex items-center space-x-5 text-sm font-medium text-pharaoh-muted">
         <a href="#executive-summary" class="hover:text-pharaoh-orange transition">核心提要</a>
         <a href="#financial-pyramid" class="hover:text-pharaoh-orange transition">理財金字塔</a>
-        <a href="#calculator-section" class="hover:text-pharaoh-orange transition">健康試算</a>
-        <a href="#prompt-hub" class="hover:text-pharaoh-orange transition">AI 提示詞庫</a>
-        <a href="#cognitive-defense" class="hover:text-pharaoh-orange transition">認知防禦</a>
-        <a href="#fraud-simulation" class="text-pharaoh-orange font-bold hover:text-pharaoh-rust transition flex items-center space-x-1">
-          <i class="fa-solid fa-bullhorn text-xs"></i>
-          <span>防詐情境模擬 (專案與考題)</span>
+        <a href="#interactive-charts" class="hover:text-pharaoh-orange text-pharaoh-orange font-semibold transition flex items-center space-x-1">
+          <i class="fa-solid fa-chart-pie text-xs"></i>
+          <span>動態視覺圖表</span>
         </a>
-        <a href="#sop-checklist" class="hover:text-pharaoh-orange transition">落地守則</a>
+        <a href="#calculator-section" class="hover:text-pharaoh-orange transition">健康診斷</a>
+        <a href="#chat-simulator" class="hover:text-pharaoh-orange transition">AI 對話模擬</a>
+        <a href="#fraud-simulation" class="text-red-700 font-bold hover:text-red-900 transition flex items-center space-x-1">
+          <i class="fa-solid fa-bullhorn text-xs"></i>
+          <span>防詐專案與題庫</span>
+        </a>
+        <a href="#speaker-gallery" class="hover:text-pharaoh-orange transition">專家寫真</a>
       </nav>
 
       <!-- Action Button -->
@@ -139,8 +149,8 @@
           </p>
 
           <div class="pt-2 flex flex-wrap items-center gap-4 text-sm text-pharaoh-muted">
-            <div class="flex items-center space-x-3 bg-white pl-2 pr-4 py-1.5 rounded-xl border border-pharaoh-sandDark shadow-sm">
-              <img src="assets/avatar.png" alt="Howard Liao Ph.D." class="w-8 h-8 rounded-lg object-cover object-top border border-pharaoh-orange shadow-sm">
+            <div class="flex items-center space-x-3 bg-white pl-2 pr-4 py-1.5 rounded-xl border border-pharaoh-sandDark shadow-sm cursor-pointer hover:border-pharaoh-orange transition" onclick="openLightbox('assets/photo_korean.png', '韓系俐落形象 • 專業證照風采')">
+              <img src="assets/photo_korean.png" alt="Howard Liao Ph.D." class="w-9 h-9 rounded-lg object-cover object-top border border-pharaoh-orange shadow-sm">
               <span class="font-bold text-pharaoh-dark">報告人：Howard Liao Ph.D. (廖倫豪 博士)</span>
             </div>
             <div class="flex items-center space-x-2 bg-white px-3 py-1.5 rounded-xl border border-pharaoh-sandDark shadow-sm">
@@ -237,46 +247,9 @@
           </p>
         </div>
       </div>
-
-      <!-- 生態系統理論 Card -->
-      <div class="bg-white p-6 sm:p-8 rounded-2xl border border-pharaoh-sandDark shadow-sm">
-        <h3 class="text-lg font-bold text-pharaoh-dark mb-3 flex items-center space-x-2 text-pharaoh-orange">
-          <i class="fa-solid fa-network-wired"></i>
-          <span>生態系統理論 (Ecosystem Theory) 在財務工程中的映射</span>
-        </h3>
-        <p class="text-sm text-pharaoh-text leading-relaxed mb-4">
-          人的財務決策從來不是孤立的數學計算，而是個人、家庭、職場、社群與總體經濟等多層環境交互作用的產物。理解個人的財務困境與行為偏誤，必須從<strong>微觀（心理/能力）、中觀（家庭責任/照顧負擔）至鉅觀（通膨/法規/高齡社會）</strong>全維度審視。
-        </p>
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 text-center text-xs">
-          <div class="p-3 bg-pharaoh-bg rounded-lg border border-pharaoh-sandDark">
-            <span class="font-bold text-pharaoh-dark block">角色承擔</span>
-            <span class="text-pharaoh-muted">親職/照顧者</span>
-          </div>
-          <div class="p-3 bg-pharaoh-bg rounded-lg border border-pharaoh-sandDark">
-            <span class="font-bold text-pharaoh-dark block">社會地位</span>
-            <span class="text-pharaoh-muted">利基與棲息地</span>
-          </div>
-          <div class="p-3 bg-pharaoh-bg rounded-lg border border-pharaoh-sandDark">
-            <span class="font-bold text-pharaoh-dark block">環境適應力</span>
-            <span class="text-pharaoh-muted">抗通膨/應變力</span>
-          </div>
-          <div class="p-3 bg-pharaoh-bg rounded-lg border border-pharaoh-sandDark">
-            <span class="font-bold text-pharaoh-dark block">生命週期</span>
-            <span class="text-pharaoh-muted">青年/壯年/銀髮</span>
-          </div>
-          <div class="p-3 bg-pharaoh-bg rounded-lg border border-pharaoh-sandDark">
-            <span class="font-bold text-pharaoh-dark block">人際關聯</span>
-            <span class="text-pharaoh-muted">家庭/親友支持網</span>
-          </div>
-          <div class="p-3 bg-pharaoh-bg rounded-lg border border-pharaoh-sandDark">
-            <span class="font-bold text-pharaoh-dark block">勝任能力</span>
-            <span class="text-pharaoh-muted">財商知能/辨詐力</span>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- CHAPTER 2: 四層人生理財金字塔與生命週期地圖 -->
+    <!-- CHAPTER 2: 四層人生理財金字塔 -->
     <section id="financial-pyramid" class="scroll-mt-24 space-y-8">
       <div class="border-l-4 border-pharaoh-orange pl-4">
         <span class="text-xs font-bold uppercase tracking-wider text-pharaoh-orange">Chapter 2 • Asset Allocation Model</span>
@@ -342,6 +315,123 @@
       </div>
     </section>
 
+    <!-- NEW SECTION: 動態互動圖表矩陣 (Chart.js Interactive Matrix) -->
+    <section id="interactive-charts" class="scroll-mt-24 space-y-8">
+      <div class="border-l-4 border-pharaoh-orange pl-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-pharaoh-orange">Interactive Visual Analytics</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-pharaoh-dark mt-1">動態視覺化圖表與 30 年複利抗跌模擬器</h2>
+      </div>
+
+      <!-- Grid for 2 Interactive Charts -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Chart 1: 50/30/20 浪費錢包即時動態甜甜圈圖 -->
+        <div class="lg:col-span-6 bg-white p-6 sm:p-8 rounded-2xl border-2 border-pharaoh-sandDark pharaoh-shadow space-y-6">
+          <div class="flex justify-between items-center">
+            <div>
+              <span class="badge-pharaoh px-2.5 py-0.5 rounded text-xs font-bold">即時預算分流</span>
+              <h3 class="text-lg font-bold text-pharaoh-dark mt-1 flex items-center space-x-2">
+                <i class="fa-solid fa-chart-pie text-pharaoh-orange"></i>
+                <span>50/30/20 浪費錢包分配甜甜圈圖</span>
+              </h3>
+            </div>
+            <span class="text-xs text-pharaoh-muted">動態重繪</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
+            <div class="relative w-full h-52">
+              <canvas id="budgetDonutChart"></canvas>
+            </div>
+            <div class="space-y-3 text-xs">
+              <div>
+                <label class="block font-bold text-pharaoh-dark mb-1">月總收入：$<span id="b-inc-val">60,000</span></label>
+                <input type="range" id="b-inc" min="25000" max="200000" step="5000" value="60000" class="w-full accent-pharaoh-orange" oninput="updateBudgetChart()">
+              </div>
+              <div>
+                <label class="block font-bold text-pharaoh-dark mb-1">浪費錢包占比 (無負罪感)：<span id="b-waste-val">15%</span></label>
+                <input type="range" id="b-waste" min="5" max="30" step="1" value="15" class="w-full accent-pharaoh-amber" oninput="updateBudgetChart()">
+              </div>
+              <div class="p-2.5 bg-pharaoh-bg rounded border border-pharaoh-sandDark space-y-1 text-[11px]">
+                <div class="flex justify-between text-slate-700"><span>必要支出 (55%)：</span><strong id="b-needs-amt">$33,000</strong></div>
+                <div class="flex justify-between text-amber-700"><span>浪費錢包 (15%)：</span><strong id="b-waste-amt">$9,000</strong></div>
+                <div class="flex justify-between text-green-700"><span>未來指數投資 (30%)：</span><strong id="b-future-amt">$18,000</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chart 2: 30年複利成長 vs. 詐騙歸零下行壓力模擬圖 -->
+        <div class="lg:col-span-6 bg-white p-6 sm:p-8 rounded-2xl border-2 border-pharaoh-sandDark pharaoh-shadow space-y-6">
+          <div class="flex justify-between items-center">
+            <div>
+              <span class="badge-pharaoh px-2.5 py-0.5 rounded text-xs font-bold">下行壓力測試</span>
+              <h3 class="text-lg font-bold text-pharaoh-dark mt-1 flex items-center space-x-2">
+                <i class="fa-solid fa-chart-line text-pharaoh-orange"></i>
+                <span>30 年穩健複利 vs. 詐騙套殺軌跡</span>
+              </h3>
+            </div>
+            <span class="text-xs text-pharaoh-muted">資產對比</span>
+          </div>
+
+          <div class="relative w-full h-52">
+            <canvas id="compoundLineChart"></canvas>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 text-xs pt-1">
+            <div class="p-2.5 bg-green-50 rounded-lg border border-green-200">
+              <span class="font-bold text-green-900 block">🟢 綠線：大盤指數定期定額 (年化7%)</span>
+              <span class="text-green-700 text-[11px]">每月 1.5 萬，30 年資產累積突破 <strong>1,829 萬元</strong>。</span>
+            </div>
+            <div class="p-2.5 bg-red-50 rounded-lg border border-red-200">
+              <span class="font-bold text-red-900 block">🔴 紅虛線：民間高利15%借貸/二胎</span>
+              <span class="text-red-700 text-[11px]">前期看似高息，第 3 年崩盤<strong>本金全損連帶房產法拍</strong>。</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Chart 3 & 4: 四維財務雷達圖 + 165 打詐財損統計長條圖 -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Radar Chart -->
+        <div class="lg:col-span-5 bg-white p-6 sm:p-8 rounded-2xl border border-pharaoh-sandDark pharaoh-shadow space-y-4">
+          <div class="flex justify-between items-center">
+            <h4 class="font-bold text-pharaoh-dark text-sm flex items-center space-x-2 text-pharaoh-orange">
+              <i class="fa-solid fa-arrows-spin"></i>
+              <span>UNSGSA 普惠財務健康四維度雷達</span>
+            </h4>
+            <span class="text-[11px] text-pharaoh-muted">即時連動</span>
+          </div>
+          <div class="relative w-full h-56">
+            <canvas id="radarHealthChart"></canvas>
+          </div>
+          <p class="text-[11px] text-pharaoh-muted text-center">
+            💡 當您在下方「健康診斷」調整滑桿時，本雷達圖將即時平滑重新繪製！
+          </p>
+        </div>
+
+        <!-- 165 Bar Chart -->
+        <div class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-2xl border border-pharaoh-sandDark pharaoh-shadow space-y-4">
+          <div class="flex justify-between items-center">
+            <h4 class="font-bold text-pharaoh-dark text-sm flex items-center space-x-2 text-red-600">
+              <i class="fa-solid fa-chart-column"></i>
+              <span>警政署 165 統計：各類金融詐騙財損規模排行（億元）</span>
+            </h4>
+            <span class="text-[11px] text-pharaoh-muted">年度數據</span>
+          </div>
+          <div class="relative w-full h-56">
+            <canvas id="fraudBarChart"></canvas>
+          </div>
+          <div class="flex justify-between text-[11px] text-pharaoh-muted px-2">
+            <span>假投資為財損之冠（佔比逾 60%）</span>
+            <span>二胎房貸套殺單一案件平均損失最高（逾千萬）</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <!-- CHAPTER 3: 互動式財務健康度評測 -->
     <section id="calculator-section" class="scroll-mt-24 space-y-8">
       <div class="border-l-4 border-pharaoh-orange pl-4">
@@ -397,6 +487,63 @@
               您具備良好的預備金與理性防禦能力！建議持續維持定期定額指數化佈局，定期檢視保單條款以因應未來通膨醫療支出。
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW SECTION: AI 防詐即時對話模擬器 (Interactive Chat Simulator) -->
+    <section id="chat-simulator" class="scroll-mt-24 space-y-8">
+      <div class="border-l-4 border-red-600 pl-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-red-600">AI Attack Simulation</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-pharaoh-dark mt-1">AI 詐騙情境即時對話模擬器（攻防實戰）</h2>
+      </div>
+
+      <div class="bg-white p-6 sm:p-8 rounded-2xl border-2 border-pharaoh-sandDark pharaoh-shadow space-y-6">
+        <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 pb-4 border-b border-pharaoh-sandDark">
+          <div>
+            <span class="badge-pharaoh px-2.5 py-0.5 rounded text-xs font-bold">攻防演練終端</span>
+            <h3 class="text-lg font-bold text-pharaoh-dark mt-1">選擇情境進行實戰對話測試</h3>
+          </div>
+          <div class="flex space-x-2">
+            <button onclick="setChatScenario(1)" id="btn-sc-1" class="px-3 py-1 rounded-lg text-xs font-bold bg-pharaoh-orange text-white shadow">情境 1：LINE 飆股群</button>
+            <button onclick="setChatScenario(2)" id="btn-sc-2" class="px-3 py-1 rounded-lg text-xs font-bold bg-slate-200 text-slate-700 hover:bg-slate-300">情境 2：AI 視訊車禍借款</button>
+            <button onclick="setChatScenario(3)" id="btn-sc-3" class="px-3 py-1 rounded-lg text-xs font-bold bg-slate-200 text-slate-700 hover:bg-slate-300">情境 3：農會主管高利借貸</button>
+          </div>
+        </div>
+
+        <!-- Chat Window Box -->
+        <div class="bg-slate-900 rounded-2xl p-4 sm:p-6 text-xs space-y-4 max-w-3xl mx-auto shadow-inner">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-3 text-slate-400">
+            <div class="flex items-center space-x-2">
+              <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+              <span id="chat-peer-name" class="text-slate-200 font-bold text-sm">【機構飆股VIP助理】林小姐</span>
+            </div>
+            <span class="text-[11px] text-slate-500">加密通訊模擬中</span>
+          </div>
+
+          <!-- Chat Message Thread -->
+          <div id="chat-thread" class="space-y-3 min-h-[160px]">
+            <!-- Incoming Message -->
+            <div class="flex items-start space-x-2.5">
+              <div class="w-7 h-7 rounded-full bg-red-600 text-white flex items-center justify-center font-bold text-xs flex-shrink-0">
+                <i class="fa-solid fa-user-secret"></i>
+              </div>
+              <div class="bg-slate-800 text-slate-200 p-3 rounded-2xl rounded-tl-none max-w-[85%] leading-relaxed" id="chat-incoming-msg">
+                您好！恭喜您獲得我們機構主力 AI 飆股 VIP 名額，這期模型預測勝率 95%，預計獲利 30% 以上，請立刻點擊連結下載專用 APP 進行配售！
+              </div>
+            </div>
+          </div>
+
+          <!-- Player Choices -->
+          <div class="pt-3 border-t border-slate-800 space-y-2" id="chat-options-box">
+            <span class="text-slate-400 block font-semibold text-[11px]">👉 請選擇您的應對策略：</span>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2" id="chat-buttons">
+              <!-- Dynamically rendered buttons -->
+            </div>
+          </div>
+
+          <!-- CISO Result Alert -->
+          <div id="chat-ciso-result" class="hidden p-3 rounded-xl text-xs font-semibold leading-relaxed"></div>
         </div>
       </div>
     </section>
@@ -499,14 +646,14 @@
       </div>
     </section>
 
-    <!-- CHAPTER 6: 金融詐騙宣導專案資料庫與情境模擬考題 (重點專案整合) -->
+    <!-- CHAPTER 6: 金融詐騙宣導專案資料庫與情境模擬考題 -->
     <section id="fraud-simulation" class="scroll-mt-24 space-y-10">
       <div class="border-l-4 border-red-600 pl-4">
         <span class="text-xs font-bold uppercase tracking-wider text-red-600">Chapter 6 • Special Anti-Fraud Hub</span>
         <h2 class="text-2xl sm:text-3xl font-bold text-pharaoh-dark mt-1">金融詐騙宣導專案資料庫與全真情境模擬考題</h2>
       </div>
 
-      <!-- PART A: 宣導專案資料庫 (5大代表性案例 + 深度案例剖析 + 心理分析) -->
+      <!-- PART A: 宣導專案資料庫 -->
       <div class="bg-white p-6 sm:p-8 rounded-2xl border-2 border-pharaoh-sandDark pharaoh-shadow space-y-8">
         <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 pb-4 border-b border-pharaoh-sandDark">
           <div>
@@ -524,7 +671,7 @@
           </div>
         </div>
 
-        <!-- 5 代表性案例卡片 (來自 1150831 docx) -->
+        <!-- 5 代表性案例卡片 + 深度案 -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 text-xs">
           
           <!-- Case 1 -->
@@ -654,66 +801,9 @@
           </div>
 
         </div>
-
-        <!-- 投資前必問四問題 (來自 docx) -->
-        <div class="p-6 bg-gradient-to-r from-orange-50 via-amber-50 to-orange-100 rounded-xl border border-pharaoh-sandDark space-y-3">
-          <h4 class="font-bold text-pharaoh-dark text-sm flex items-center space-x-2 text-pharaoh-orange">
-            <i class="fa-solid fa-circle-question"></i>
-            <span>任何重大投資之前，先問自己四個問題（黃金自省協議）</span>
-          </h4>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
-            <div class="p-3 bg-white rounded-lg border border-amber-200">
-              <strong class="text-pharaoh-dark block mb-1">1. 如果全部賠光，我還能生活嗎？</strong>
-              <span class="text-pharaoh-muted">壓力測試家庭底線，絕不用生存救命錢投機。</span>
-            </div>
-            <div class="p-3 bg-white rounded-lg border border-amber-200">
-              <strong class="text-pharaoh-dark block mb-1">2. 我真的了解它怎麼賺錢嗎？</strong>
-              <span class="text-pharaoh-muted">底層商業模式合不合理？還是純粹龐氏資金盤？</span>
-            </div>
-            <div class="p-3 bg-white rounded-lg border border-amber-200">
-              <strong class="text-pharaoh-dark block mb-1">3. 為什麼它願意給我這麼高的報酬？</strong>
-              <span class="text-pharaoh-muted">超額報酬從何而來？無風險利率僅 1.5%，15% 背後有何黑幕？</span>
-            </div>
-            <div class="p-3 bg-white rounded-lg border border-amber-200">
-              <strong class="text-pharaoh-dark block mb-1">4. 如果今天是我的家人，我會同意嗎？</strong>
-              <span class="text-pharaoh-muted">跳脫自身貪婪與恐懼，以旁觀者清的理性視角審視。</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 防詐推理王討論指引 (來自 docx) -->
-        <div class="p-5 bg-pharaoh-bg rounded-xl border border-pharaoh-sandDark space-y-3">
-          <h4 class="font-bold text-pharaoh-dark text-sm flex items-center space-x-2 text-pharaoh-orange">
-            <i class="fa-solid fa-users-viewfinder"></i>
-            <span>「防詐推理王」分組研討與 AI 查證提問 SOP</span>
-          </h4>
-          <div class="grid grid-cols-1 md:grid-cols-5 gap-3 text-xs">
-            <div class="p-3 bg-white rounded-lg border border-pharaoh-sandDark">
-              <strong class="text-pharaoh-dark block mb-1">Step 1. 建立信任</strong>
-              <span class="text-pharaoh-muted">找出詐騙集團第一步如何降低你的戒心（小額出金/送商品/溫情陪伴）。</span>
-            </div>
-            <div class="p-3 bg-white rounded-lg border border-pharaoh-sandDark">
-              <strong class="text-pharaoh-dark block mb-1">Step 2. 關鍵停點</strong>
-              <span class="text-pharaoh-muted">指出受害者在「哪一個步驟」最應該停下來查證（加碼前/抵押房產前）。</span>
-            </div>
-            <div class="p-3 bg-white rounded-lg border border-pharaoh-sandDark">
-              <strong class="text-pharaoh-dark block mb-1">Step 3. 家人勸阻</strong>
-              <span class="text-pharaoh-muted">若是自己家人深陷其中，如何以同理心溝通而非指責，引導其看清局勢。</span>
-            </div>
-            <div class="p-3 bg-white rounded-lg border border-pharaoh-sandDark">
-              <strong class="text-pharaoh-dark block mb-1">Step 4. AI 提問查證</strong>
-              <span class="text-pharaoh-muted">輸入結構化 Prompt 要求 AI 分析「標的收益模型與下行風險」，破解話術。</span>
-            </div>
-            <div class="p-3 bg-white rounded-lg border border-pharaoh-sandDark">
-              <strong class="text-pharaoh-dark block mb-1">Step 5. 財商啟示</strong>
-              <span class="text-pharaoh-muted">真正的財富不是追求最高報酬，而是讓自己在任何階段都有能力安心生活。</span>
-            </div>
-          </div>
-        </div>
-
       </div>
 
-      <!-- PART B: 全真情境模擬考題庫 (Interactive Quiz with 6 Scenarios, 100 points) -->
+      <!-- PART B: 全真情境模擬考題庫 (Interactive Quiz with 6 Scenarios) -->
       <div class="bg-white p-6 sm:p-8 rounded-2xl border-2 border-pharaoh-sandDark pharaoh-shadow space-y-6">
         <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 pb-4 border-b border-pharaoh-sandDark">
           <div>
@@ -853,16 +943,51 @@
 
         </div>
 
-        <!-- Quiz Completion Certificate Banner -->
-        <div id="quiz-result-banner" class="hidden p-6 rounded-2xl bg-gradient-to-r from-amber-600 via-orange-600 to-yellow-600 text-white shadow-lg space-y-4">
+        <!-- Quiz Completion Certificate Banner with Personalization -->
+        <div id="quiz-result-banner" class="hidden p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-amber-600 via-orange-600 to-yellow-600 text-white shadow-xl space-y-5">
           <div class="flex items-center justify-between">
             <span class="px-3 py-1 bg-white/20 backdrop-blur rounded-full text-xs font-bold">防詐測驗評定結算</span>
-            <span id="final-score-badge" class="text-2xl font-black">100 / 100 分</span>
+            <span id="final-score-badge" class="text-2xl sm:text-3xl font-black">100 / 100 分</span>
           </div>
-          <h4 class="text-xl font-bold" id="final-cert-title">🎖️ 恭喜獲得：零信任金融安全防詐架構師認證！</h4>
+          <h4 class="text-xl sm:text-2xl font-bold" id="final-cert-title">🎖️ 恭喜獲得：零信任金融安全防詐架構師認證！</h4>
           <p class="text-xs sm:text-sm leading-relaxed opacity-95" id="final-cert-desc">
-            您已成功通過全部 6 大情境考驗，具備極高的認知防禦力與 165 打詐洞察力！面對深偽攻擊、假投資話術與釣魚連結皆能保持從容查證。
+            您已成功通過全部 6 大情境考驗，具備極高的認知防禦力與 165 打詐洞察力！
           </p>
+
+          <!-- Interactive Certificate Generator Card -->
+          <div class="bg-white text-slate-800 p-5 sm:p-6 rounded-xl border-2 border-pharaoh-sandDark space-y-4 shadow-lg">
+            <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 border-b border-slate-200 pb-3">
+              <div>
+                <span class="text-[11px] font-bold text-pharaoh-orange uppercase tracking-wider">Zero-Trust Anti-Fraud Certificate</span>
+                <h5 class="text-base font-black text-slate-900">零信任金融安全防詐合格證書</h5>
+              </div>
+              <span class="text-xs font-mono text-slate-500">證書編號：SCAM-2026-HL09</span>
+            </div>
+
+            <div class="space-y-2 text-xs">
+              <div class="flex items-center space-x-2">
+                <span>獲頒學者/學員姓名：</span>
+                <input type="text" id="cert-user-name" value="受訓專家" class="border border-slate-300 rounded px-2 py-1 text-xs font-bold text-pharaoh-dark focus:outline-pharaoh-orange" oninput="updateCertName()">
+              </div>
+              <p class="text-slate-600 leading-relaxed">
+                茲證明 <strong id="cert-user-display" class="text-pharaoh-orange text-sm font-black">受訓專家</strong> 先生/女士 於民國 115 年完成《AI 時代智慧財務分析、認知防禦與全維度金融防詐工程論》全套研習與 6 大全真情境壓力測試，結業成績合格，特頒此證。
+              </p>
+            </div>
+
+            <div class="flex justify-between items-center pt-3 border-t border-slate-200 text-xs">
+              <div class="flex items-center space-x-2">
+                <img src="assets/photo_korean.png" class="w-8 h-8 rounded-full object-cover border border-pharaoh-orange">
+                <div>
+                  <span class="font-bold text-slate-900 block text-[11px]">認證簽署人：Howard Liao Ph.D. (廖倫豪 博士)</span>
+                  <span class="text-[10px] text-slate-500">CIO / CISO / CDAIO • Forward-Deployed AI Architect</span>
+                </div>
+              </div>
+              <button onclick="window.print()" class="px-3 py-1.5 bg-pharaoh-dark text-white rounded-lg hover:bg-slate-800 font-bold text-xs flex items-center space-x-1">
+                <i class="fa-solid fa-print"></i>
+                <span>列印 / 存為 PDF</span>
+              </button>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -968,11 +1093,11 @@
       </div>
     </section>
 
-    <!-- Author Dossier & Executive Gallery -->
-    <section class="bg-white p-8 sm:p-10 rounded-2xl border-2 border-pharaoh-sandDark pharaoh-shadow space-y-8">
+    <!-- CHAPTER 8: 報告人形象寫真專欄 (Executive Leadership Gallery) -->
+    <section id="speaker-gallery" class="scroll-mt-24 bg-white p-8 sm:p-10 rounded-2xl border-2 border-pharaoh-sandDark pharaoh-shadow space-y-8">
       <!-- Main Bio Header -->
       <div class="flex flex-col sm:flex-row items-center gap-6 pb-6 border-b border-pharaoh-sandDark">
-        <div class="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border-2 border-pharaoh-orange shadow-lg flex-shrink-0">
+        <div class="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border-2 border-pharaoh-orange shadow-lg flex-shrink-0 cursor-pointer hover:scale-105 transition" onclick="openLightbox('assets/photo_korean.png', '韓系俐落形象 • 專業證照風采')">
           <img src="assets/photo_korean.png" alt="Howard Liao Ph.D. 廖倫豪 博士" class="w-full h-full object-cover object-top">
         </div>
         <div class="text-center sm:text-left space-y-1">
@@ -989,19 +1114,19 @@
         </div>
       </div>
 
-      <!-- Executive Photo Gallery (6 Featured Photos) -->
+      <!-- Executive Photo Gallery (6 Featured Photos with Lightbox Trigger) -->
       <div class="space-y-4">
         <div class="flex justify-between items-center">
           <h4 class="font-bold text-pharaoh-dark text-base flex items-center space-x-2 text-pharaoh-orange">
             <i class="fa-solid fa-camera-retro"></i>
             <span>報告人形象風采與寫真專欄 (Executive Leadership Gallery)</span>
           </h4>
-          <span class="text-xs text-pharaoh-muted">點擊可放大預覽</span>
+          <span class="text-xs text-pharaoh-muted">點擊任一照片可放大預覽</span>
         </div>
 
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           <!-- Photo 1: 韓系俐落證照 -->
-          <div class="group relative rounded-xl overflow-hidden border-2 border-pharaoh-sandDark bg-pharaoh-bg shadow-sm hover:border-pharaoh-orange hover:shadow-md transition">
+          <div class="group relative rounded-xl overflow-hidden border-2 border-pharaoh-sandDark bg-pharaoh-bg shadow-sm hover:border-pharaoh-orange hover:shadow-md transition cursor-pointer" onclick="openLightbox('assets/photo_korean.png', '韓系俐落專業形象證照 • 嚴謹專業')">
             <div class="aspect-[3/4] overflow-hidden">
               <img src="assets/photo_korean.png" alt="韓系俐落專業形象" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300">
             </div>
@@ -1012,7 +1137,7 @@
           </div>
 
           <!-- Photo 2: UOMO 封面大片 -->
-          <div class="group relative rounded-xl overflow-hidden border-2 border-pharaoh-sandDark bg-pharaoh-bg shadow-sm hover:border-pharaoh-orange hover:shadow-md transition">
+          <div class="group relative rounded-xl overflow-hidden border-2 border-pharaoh-sandDark bg-pharaoh-bg shadow-sm hover:border-pharaoh-orange hover:shadow-md transition cursor-pointer" onclick="openLightbox('assets/photo_uomo_cover.png', 'UOMO 雜誌封面風高階大片 • 卓越領袖')">
             <div class="aspect-[3/4] overflow-hidden">
               <img src="assets/photo_uomo_cover.png" alt="UOMO 雜誌封面風高階大片" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
             </div>
@@ -1023,7 +1148,7 @@
           </div>
 
           <!-- Photo 3: UOMO 高管寫真 01 -->
-          <div class="group relative rounded-xl overflow-hidden border-2 border-pharaoh-sandDark bg-pharaoh-bg shadow-sm hover:border-pharaoh-orange hover:shadow-md transition">
+          <div class="group relative rounded-xl overflow-hidden border-2 border-pharaoh-sandDark bg-pharaoh-bg shadow-sm hover:border-pharaoh-orange hover:shadow-md transition cursor-pointer" onclick="openLightbox('assets/photo_uomo_01.png', 'UOMO 時尚高管寫真 01 • 現代紳士')">
             <div class="aspect-[3/4] overflow-hidden">
               <img src="assets/photo_uomo_01.png" alt="UOMO 時尚高管寫真 01" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
             </div>
@@ -1034,7 +1159,7 @@
           </div>
 
           <!-- Photo 4: UOMO 沉穩寫真 03 -->
-          <div class="group relative rounded-xl overflow-hidden border-2 border-pharaoh-sandDark bg-pharaoh-bg shadow-sm hover:border-pharaoh-orange hover:shadow-md transition">
+          <div class="group relative rounded-xl overflow-hidden border-2 border-pharaoh-sandDark bg-pharaoh-bg shadow-sm hover:border-pharaoh-orange hover:shadow-md transition cursor-pointer" onclick="openLightbox('assets/photo_uomo_03.png', 'UOMO 沉穩專注形象照 03 • 睿智決策')">
             <div class="aspect-[3/4] overflow-hidden">
               <img src="assets/photo_uomo_03.png" alt="UOMO 沉穩專注形象照 03" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
             </div>
@@ -1045,7 +1170,7 @@
           </div>
 
           <!-- Photo 5: CIO 領袖專訪 -->
-          <div class="group relative rounded-xl overflow-hidden border-2 border-pharaoh-sandDark bg-pharaoh-bg shadow-sm hover:border-pharaoh-orange hover:shadow-md transition">
+          <div class="group relative rounded-xl overflow-hidden border-2 border-pharaoh-sandDark bg-pharaoh-bg shadow-sm hover:border-pharaoh-orange hover:shadow-md transition cursor-pointer" onclick="openLightbox('assets/photo_cio.png', 'CIO 科技領袖專訪 • 上市櫃資訊長')">
             <div class="aspect-[3/4] overflow-hidden">
               <img src="assets/photo_cio.png" alt="CIO 科技領袖專訪" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
             </div>
@@ -1056,7 +1181,7 @@
           </div>
 
           <!-- Photo 6: AI 博士學者 -->
-          <div class="group relative rounded-xl overflow-hidden border-2 border-pharaoh-sandDark bg-pharaoh-bg shadow-sm hover:border-pharaoh-orange hover:shadow-md transition">
+          <div class="group relative rounded-xl overflow-hidden border-2 border-pharaoh-sandDark bg-pharaoh-bg shadow-sm hover:border-pharaoh-orange hover:shadow-md transition cursor-pointer" onclick="openLightbox('assets/photo_phd.png', 'Howard Liao Ph.D. 權威學者 • AI架構師')">
             <div class="aspect-[3/4] overflow-hidden">
               <img src="assets/photo_phd.png" alt="Howard Liao Ph.D. 權威學者" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
             </div>
@@ -1082,6 +1207,22 @@
 
   </main>
 
+  <!-- Global Lightbox Modal -->
+  <div id="image-lightbox" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4 backdrop-blur-sm transition-all" onclick="closeLightbox()">
+    <div class="relative max-w-xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl" onclick="event.stopPropagation()">
+      <button onclick="closeLightbox()" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-black transition">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="max-h-[75vh] overflow-hidden bg-slate-950 flex items-center justify-center">
+        <img id="lightbox-img" src="" alt="Photo Preview" class="max-h-[75vh] w-auto object-contain">
+      </div>
+      <div class="p-4 bg-white text-center">
+        <h4 id="lightbox-caption" class="font-bold text-pharaoh-dark text-sm"></h4>
+        <span class="text-xs text-pharaoh-orange font-semibold">Howard Liao Ph.D. (廖倫豪 博士) 形象寫真</span>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="bg-pharaoh-dark text-slate-400 py-10 border-t border-slate-800 text-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
@@ -1103,7 +1244,7 @@
     </div>
   </footer>
 
-  <!-- Interactive JavaScript -->
+  <!-- Interactive JavaScript & Chart.js Implementation -->
   <script>
     // Scroll Progress
     window.addEventListener('scroll', () => {
@@ -1112,6 +1253,16 @@
       const scrolled = (winScroll / height) * 100;
       document.getElementById('scroll-progress').style.width = scrolled + '%';
     });
+
+    // Lightbox Controls
+    function openLightbox(src, caption) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox-caption').innerText = caption;
+      document.getElementById('image-lightbox').classList.add('modal-active');
+    }
+    function closeLightbox() {
+      document.getElementById('image-lightbox').classList.remove('modal-active');
+    }
 
     // Layer selection logic
     const layerData = {
@@ -1152,6 +1303,164 @@
       content.querySelector('.bg-pharaoh-bg').innerHTML = listHtml;
     }
 
+    // ==========================================
+    // CHART.JS INITIALIZATIONS
+    // ==========================================
+    let budgetChart, compoundChart, radarChart, fraudChart;
+
+    function initCharts() {
+      // 1. Budget Donut Chart
+      const ctxDonut = document.getElementById('budgetDonutChart').getContext('2d');
+      budgetChart = new Chart(ctxDonut, {
+        type: 'doughnut',
+        data: {
+          labels: ['必要消費 (Needs)', '浪費錢包 (Wants)', '未來投資 (Future)'],
+          datasets: [{
+            data: [55, 15, 30],
+            backgroundColor: ['#1E293B', '#D97706', '#10B981'],
+            borderWidth: 2,
+            borderColor: '#FFFFFF'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 10 } } }
+          },
+          animation: { animateScale: true, animateRotate: true }
+        }
+      });
+
+      // 2. 30-Year Compound vs Scam Line Chart
+      const ctxLine = document.getElementById('compoundLineChart').getContext('2d');
+      const years = Array.from({length: 31}, (_, i) => `${i}年`);
+      // Compound data: Monthly 15k @ 7%
+      let compData = [0];
+      let r = 0.07 / 12;
+      for (let y = 1; y <= 30; y++) {
+        let fv = 15000 * ((Math.pow(1 + r, y * 12) - 1) / r);
+        compData.push(Math.round(fv / 10000)); // in 萬元
+      }
+      // Scam trajectory: 15% return for 2 years, then crash to -1500 (mortgage debt)
+      let scamData = [0, 27, 60, -1500, -1450, -1400, -1350, -1300, -1250, -1200, -1150, -1100, -1050, -1000, -950, -900, -850, -800, -750, -700, -650, -600, -550, -500, -450, -400, -350, -300, -250, -200, -150];
+
+      compoundChart = new Chart(ctxLine, {
+        type: 'line',
+        data: {
+          labels: years,
+          datasets: [
+            {
+              label: '穩健指數複利 (年化7%) 萬元',
+              data: compData,
+              borderColor: '#10B981',
+              backgroundColor: 'rgba(16, 185, 129, 0.1)',
+              fill: true,
+              tension: 0.3,
+              borderWidth: 2.5
+            },
+            {
+              label: '高利騙局二胎套殺 (萬元)',
+              data: scamData,
+              borderColor: '#EF4444',
+              borderDash: [5, 5],
+              fill: false,
+              tension: 0.1,
+              borderWidth: 2.5
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              grid: { color: '#F1F5F9' },
+              ticks: { font: { size: 9 }, callback: (v) => v + '萬' }
+            },
+            x: {
+              grid: { display: false },
+              ticks: { font: { size: 9 }, maxTicksLimit: 7 }
+            }
+          },
+          plugins: {
+            legend: { position: 'top', labels: { boxWidth: 10, font: { size: 10 } } }
+          }
+        }
+      });
+
+      // 3. Radar Chart (4 Pillars)
+      const ctxRadar = document.getElementById('radarHealthChart').getContext('2d');
+      radarChart = new Chart(ctxRadar, {
+        type: 'radar',
+        data: {
+          labels: ['日常收支平衡', '流動儲備韌性', '跨期長期規劃', '安全防詐掌控'],
+          datasets: [{
+            label: '您的財務健康度',
+            data: [80, 75, 85, 90],
+            backgroundColor: 'rgba(194, 65, 12, 0.25)',
+            borderColor: '#C2410C',
+            pointBackgroundColor: '#D97706',
+            borderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            r: {
+              min: 0,
+              max: 100,
+              ticks: { display: false, stepSize: 25 },
+              pointLabels: { font: { size: 10, weight: 'bold' }, color: '#334155' }
+            }
+          },
+          plugins: { legend: { display: false } }
+        }
+      });
+
+      // 4. Fraud Statistics Bar Chart
+      const ctxBar = document.getElementById('fraudBarChart').getContext('2d');
+      fraudChart = new Chart(ctxBar, {
+        type: 'bar',
+        data: {
+          labels: ['假投資APP/飆股群', '二胎房貸民間高利', '假檢警監管帳戶', 'AI深偽視訊借款', '釣魚簡訊盜刷'],
+          datasets: [{
+            label: '年度財損金額估計 (億元)',
+            data: [58.5, 32.4, 18.2, 8.6, 5.3],
+            backgroundColor: ['#DC2626', '#EA580C', '#D97706', '#3B82F6', '#64748B'],
+            borderRadius: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: { grid: { color: '#F1F5F9' }, ticks: { font: { size: 9 }, callback: v => v + '億' } },
+            x: { grid: { display: false }, ticks: { font: { size: 9 } } }
+          },
+          plugins: { legend: { display: false } }
+        }
+      });
+    }
+
+    function updateBudgetChart() {
+      const inc = parseInt(document.getElementById('b-inc').value);
+      const wastePct = parseInt(document.getElementById('b-waste').value);
+      const needsPct = 55;
+      const futurePct = 100 - needsPct - wastePct;
+
+      document.getElementById('b-inc-val').innerText = inc.toLocaleString();
+      document.getElementById('b-waste-val').innerText = wastePct + '%';
+
+      document.getElementById('b-needs-amt').innerText = '$' + Math.round(inc * (needsPct / 100)).toLocaleString();
+      document.getElementById('b-waste-amt').innerText = '$' + Math.round(inc * (wastePct / 100)).toLocaleString();
+      document.getElementById('b-future-amt').innerText = '$' + Math.round(inc * (futurePct / 100)).toLocaleString();
+
+      budgetChart.data.datasets[0].data = [needsPct, wastePct, futurePct];
+      budgetChart.update();
+    }
+
     // Health Calculator Logic
     function calculateHealthScore() {
       const savings = parseInt(document.getElementById('savings-rate').value);
@@ -1173,6 +1482,16 @@
       score = Math.round(Math.min(100, Math.max(10, score)));
       document.getElementById('score-number').innerText = score;
 
+      // Update Radar Chart dynamically
+      if (radarChart) {
+        let p1 = Math.round(Math.max(10, Math.min(100, (savings + 30) * 1.1)));
+        let p2 = Math.round(Math.min(100, emergency * 12));
+        let p3 = Math.round(knowledge * 10);
+        let p4 = Math.round(defense * 10);
+        radarChart.data.datasets[0].data = [p1, p2, p3, p4];
+        radarChart.update();
+      }
+
       const gradeEl = document.getElementById('score-grade');
       const adviceEl = document.getElementById('score-advice');
 
@@ -1188,6 +1507,79 @@
         gradeEl.innerText = "等級：高脆弱警示 • 需即刻重構預算";
         gradeEl.className = "text-sm font-bold text-red-600";
         adviceEl.innerText = "財務緩衝池不足，極易在面臨意外或金融誘惑時陷入高利貸或流動性斷裂陷阱。請立即啟動 50/30/20 預算修復，全面凍結非必要娛樂開銷。";
+      }
+    }
+
+    // ==========================================
+    // AI CHAT SIMULATOR LOGIC
+    // ==========================================
+    const chatScenarios = {
+      1: {
+        peer: "【機構飆股VIP助理】林小姐",
+        msg: "您好！恭喜您獲得我們機構主力 AI 飆股 VIP 名額，這期模型預測勝率 95%，預計獲利 30% 以上，請立刻點擊連結下載專用 APP 進行配售！",
+        options: [
+          { text: "A. 馬上下載 APP 匯款 2 萬嘗試", correct: false, reply: "太好了！已為您開通專屬帳號，請立刻將 2 萬元匯至指定特約個人帳戶...", feedback: "❌ 判定失敗：資金已淪陷！非官方 APP 具有後台改單與鎖死本金機制。" },
+          { text: "B. 詢問對方金管會許可執照編號", correct: true, reply: "【對方已將您退出群組並封鎖通訊錄】", feedback: "✅ 判定成功：直擊核心要害！要求出示特許監管牌照可瞬間破壞詐騙話術鏈。" },
+          { text: "C. 截圖通報 165 並退出群組", correct: true, reply: "【您已成功封鎖該聯絡人並完成檢舉】", feedback: "✅ 判定成功：標準 CISO 阻斷協議！徹底杜絕後續社交工程攻擊。" }
+        ]
+      },
+      2: {
+        peer: "【海外視訊】兒子（AI深偽換臉聲紋）",
+        msg: "爸！我在國外租車撞到當地豪車被警方扣押，對方律師說 1 小時內沒匯 50 萬交保就要把我移送監獄，求你快救我！",
+        options: [
+          { text: "A. 看到視訊聲音長相完全一致，立刻臨櫃全額匯款", correct: false, reply: "謝謝爸！請把匯款水單拍照傳給我...", feedback: "❌ 判定失敗：深偽技術可即時同步換臉與聲紋，未經第二管道求證造成重大財損。" },
+          { text: "B. 掛斷電話，撥打原本國際漫遊門號並核對「家庭通關密碼」", correct: true, reply: "【電話回撥接通】兒子：『爸？我剛在圖書館看書，我沒事啊！』", feedback: "✅ 判定成功：零信任防禦典範！專屬暗號與實體回撥是深偽攻擊唯一天敵。" },
+          { text: "C. 詢問駐外辦事處查證", correct: true, reply: "【駐外辦事處確認並無此拘押紀錄】", feedback: "✅ 判定成功：透過官方公權力查證，成功阻斷境外金流詐騙。" }
+        ]
+      },
+      3: {
+        peer: "【多年好友】老陳（農會投資顧問轉介）",
+        msg: "兄弟，農會高層親自操盤的內部借貸項目，年息保證 15% 按月發現金！我都領兩年了，把你那棟房子辦二胎貸 1000 萬進來，躺著賺利差！",
+        options: [
+          { text: "A. 既然老朋友領兩年了，辦二胎賺利差很聰明", correct: false, reply: "太好了！明天代書直接到你家簽抵押合約...", feedback: "❌ 判定失敗：龐氏騙局蓄水期！三年後負責人失聯，自住房產連帶法拍破產。" },
+          { text: "B. 提問：『若 1000 萬本金全損，我的房產會不會被查封？』拒絕抵押", correct: true, reply: "老陳：『呃...投資本來就有風險啦，你不敢就算了...』", feedback: "✅ 判定成功：守住自住房產底線！高齡防守首重本金安全。" },
+          { text: "C. 建議老陳向公股銀行申請正規安養信託", correct: true, reply: "【老陳思考後決定撤出資金，成功避免連鎖破產】", feedback: "✅ 判定成功：以正規普惠金融工具引導親友，落實家庭金融安全治理。" }
+        ]
+      }
+    };
+
+    function setChatScenario(scId) {
+      for (let i = 1; i <= 3; i++) {
+        const btn = document.getElementById(`btn-sc-${i}`);
+        if (i === scId) {
+          btn.className = "px-3 py-1 rounded-lg text-xs font-bold bg-pharaoh-orange text-white shadow";
+        } else {
+          btn.className = "px-3 py-1 rounded-lg text-xs font-bold bg-slate-200 text-slate-700 hover:bg-slate-300";
+        }
+      }
+
+      const sc = chatScenarios[scId];
+      document.getElementById('chat-peer-name').innerText = sc.peer;
+      document.getElementById('chat-incoming-msg').innerText = sc.msg;
+      document.getElementById('chat-ciso-result').classList.add('hidden');
+
+      const btnBox = document.getElementById('chat-buttons');
+      btnBox.innerHTML = '';
+      sc.options.forEach((opt, idx) => {
+        const b = document.createElement('button');
+        b.className = "text-left p-2.5 rounded-xl border border-slate-700 bg-slate-800 text-slate-200 hover:border-pharaoh-orange hover:bg-slate-750 transition text-[11px] leading-tight";
+        b.innerText = opt.text;
+        b.onclick = () => selectChatOption(scId, idx);
+        btnBox.appendChild(b);
+      });
+    }
+
+    function selectChatOption(scId, optIdx) {
+      const opt = chatScenarios[scId].options[optIdx];
+      const resEl = document.getElementById('chat-ciso-result');
+      resEl.classList.remove('hidden');
+
+      if (opt.correct) {
+        resEl.className = "p-3.5 rounded-xl text-xs font-semibold leading-relaxed bg-green-950 text-green-200 border border-green-700";
+        resEl.innerHTML = `<strong>🤖 對方回應：</strong> ${opt.reply}<br><br><span class="text-green-300">${opt.feedback}</span>`;
+      } else {
+        resEl.className = "p-3.5 rounded-xl text-xs font-semibold leading-relaxed bg-red-950 text-red-200 border border-red-700";
+        resEl.innerHTML = `<strong>🤖 對方回應：</strong> ${opt.reply}<br><br><span class="text-red-300">${opt.feedback}</span>`;
       }
     }
 
@@ -1330,6 +1722,11 @@
       }
     }
 
+    function updateCertName() {
+      const name = document.getElementById('cert-user-name').value || '受訓專家';
+      document.getElementById('cert-user-display').innerText = name;
+    }
+
     function resetQuiz() {
       for (let i = 1; i <= 6; i++) {
         quizState[i].answered = false;
@@ -1364,6 +1761,12 @@
         st.innerText = `目前已簽署 ${count} 項，請全部勾選完成自我安全固化。`;
       }
     }
+
+    // Window Onload Init
+    window.addEventListener('DOMContentLoaded', () => {
+      initCharts();
+      setChatScenario(1);
+    });
   </script>
 </body>
 </html>
