@@ -1,6 +1,6 @@
 # Scam • AI 時代智慧財務分析、認知防禦與全維度金融防詐工程論
 
-> **報告人：Howard Liao Ph.D. (廖倫豪 博士)**  
+> **報告人：Howard Liao Ph.D.**  
 > *Forward-Deployed AI Architect & Player-Coach C-Level Executive (CIO / CISO / CDAIO)*  
 > **專案線上 Live 體驗網址**：[https://howardliao.github.io/Scam/](https://howardliao.github.io/Scam/)
 
@@ -8,7 +8,7 @@
 
 ## 📖 專案概述 (Project Overview)
 
-本專案《AI 時代智慧財務分析、認知防禦與全維度金融防詐工程論》（Project **Scam**）為 **Howard Liao Ph.D. (廖倫豪 博士)** 針對現代高階認知資安、家庭現金流管理與 165 反詐決策鏈所建構之全維度防禦工程體系。
+本專案《AI 時代智慧財務分析、認知防禦與全維度金融防詐工程論》（Project **Scam**）為 **Howard Liao Ph.D.** 針對現代高階認知資安、家庭現金流管理與 165 反詐決策鏈所建構之全維度防禦工程體系。
 
 專案深度結合：
 1. **生態系統理論 (Ecosystem Theory)**：微觀心理、中觀家庭照顧責任與鉅觀通膨/高齡社會之財務映射。
