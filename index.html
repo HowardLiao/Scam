@@ -968,11 +968,12 @@
       </div>
     </section>
 
-    <!-- Author Dossier -->
-    <section class="bg-white p-8 sm:p-10 rounded-2xl border-2 border-pharaoh-sandDark pharaoh-shadow space-y-6">
+    <!-- Author Dossier & Executive Gallery -->
+    <section class="bg-white p-8 sm:p-10 rounded-2xl border-2 border-pharaoh-sandDark pharaoh-shadow space-y-8">
+      <!-- Main Bio Header -->
       <div class="flex flex-col sm:flex-row items-center gap-6 pb-6 border-b border-pharaoh-sandDark">
         <div class="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border-2 border-pharaoh-orange shadow-lg flex-shrink-0">
-          <img src="assets/avatar.png" alt="Howard Liao Ph.D. 廖倫豪 博士" class="w-full h-full object-cover object-top">
+          <img src="assets/photo_korean.png" alt="Howard Liao Ph.D. 廖倫豪 博士" class="w-full h-full object-cover object-top">
         </div>
         <div class="text-center sm:text-left space-y-1">
           <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
@@ -988,7 +989,87 @@
         </div>
       </div>
 
-      <div class="space-y-4 text-xs sm:text-sm text-pharaoh-text leading-relaxed">
+      <!-- Executive Photo Gallery (6 Featured Photos) -->
+      <div class="space-y-4">
+        <div class="flex justify-between items-center">
+          <h4 class="font-bold text-pharaoh-dark text-base flex items-center space-x-2 text-pharaoh-orange">
+            <i class="fa-solid fa-camera-retro"></i>
+            <span>報告人形象風采與寫真專欄 (Executive Leadership Gallery)</span>
+          </h4>
+          <span class="text-xs text-pharaoh-muted">點擊可放大預覽</span>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          <!-- Photo 1: 韓系俐落證照 -->
+          <div class="group relative rounded-xl overflow-hidden border-2 border-pharaoh-sandDark bg-pharaoh-bg shadow-sm hover:border-pharaoh-orange hover:shadow-md transition">
+            <div class="aspect-[3/4] overflow-hidden">
+              <img src="assets/photo_korean.png" alt="韓系俐落專業形象" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="p-2 bg-white text-center border-t border-pharaoh-sandDark">
+              <span class="text-[11px] font-bold text-pharaoh-dark block truncate">韓系俐落形象</span>
+              <span class="text-[10px] text-pharaoh-orange">專業證照風采</span>
+            </div>
+          </div>
+
+          <!-- Photo 2: UOMO 封面大片 -->
+          <div class="group relative rounded-xl overflow-hidden border-2 border-pharaoh-sandDark bg-pharaoh-bg shadow-sm hover:border-pharaoh-orange hover:shadow-md transition">
+            <div class="aspect-[3/4] overflow-hidden">
+              <img src="assets/photo_uomo_cover.png" alt="UOMO 雜誌封面風高階大片" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="p-2 bg-white text-center border-t border-pharaoh-sandDark">
+              <span class="text-[11px] font-bold text-pharaoh-dark block truncate">UOMO 封面風尚</span>
+              <span class="text-[10px] text-pharaoh-amber">高階商務大片</span>
+            </div>
+          </div>
+
+          <!-- Photo 3: UOMO 高管寫真 01 -->
+          <div class="group relative rounded-xl overflow-hidden border-2 border-pharaoh-sandDark bg-pharaoh-bg shadow-sm hover:border-pharaoh-orange hover:shadow-md transition">
+            <div class="aspect-[3/4] overflow-hidden">
+              <img src="assets/photo_uomo_01.png" alt="UOMO 時尚高管寫真 01" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="p-2 bg-white text-center border-t border-pharaoh-sandDark">
+              <span class="text-[11px] font-bold text-pharaoh-dark block truncate">UOMO 高管寫真</span>
+              <span class="text-[10px] text-pharaoh-gold">現代紳士格調</span>
+            </div>
+          </div>
+
+          <!-- Photo 4: UOMO 沉穩寫真 03 -->
+          <div class="group relative rounded-xl overflow-hidden border-2 border-pharaoh-sandDark bg-pharaoh-bg shadow-sm hover:border-pharaoh-orange hover:shadow-md transition">
+            <div class="aspect-[3/4] overflow-hidden">
+              <img src="assets/photo_uomo_03.png" alt="UOMO 沉穩專注形象照 03" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="p-2 bg-white text-center border-t border-pharaoh-sandDark">
+              <span class="text-[11px] font-bold text-pharaoh-dark block truncate">沉穩決策風采</span>
+              <span class="text-[10px] text-pharaoh-rust">睿智專注神采</span>
+            </div>
+          </div>
+
+          <!-- Photo 5: CIO 領袖專訪 -->
+          <div class="group relative rounded-xl overflow-hidden border-2 border-pharaoh-sandDark bg-pharaoh-bg shadow-sm hover:border-pharaoh-orange hover:shadow-md transition">
+            <div class="aspect-[3/4] overflow-hidden">
+              <img src="assets/photo_cio.png" alt="CIO 科技領袖專訪" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="p-2 bg-white text-center border-t border-pharaoh-sandDark">
+              <span class="text-[11px] font-bold text-pharaoh-dark block truncate">CIO 科技領袖</span>
+              <span class="text-[10px] text-blue-600">媒體報導專題</span>
+            </div>
+          </div>
+
+          <!-- Photo 6: AI 博士學者 -->
+          <div class="group relative rounded-xl overflow-hidden border-2 border-pharaoh-sandDark bg-pharaoh-bg shadow-sm hover:border-pharaoh-orange hover:shadow-md transition">
+            <div class="aspect-[3/4] overflow-hidden">
+              <img src="assets/photo_phd.png" alt="Howard Liao Ph.D. 權威學者" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+            </div>
+            <div class="p-2 bg-white text-center border-t border-pharaoh-sandDark">
+              <span class="text-[11px] font-bold text-pharaoh-dark block truncate">AI 架構權威博士</span>
+              <span class="text-[10px] text-emerald-600">產學實戰專家</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Concluding Message -->
+      <div class="space-y-4 text-xs sm:text-sm text-pharaoh-text leading-relaxed pt-2 border-t border-pharaoh-sandDark/60">
         <h4 class="font-bold text-pharaoh-dark text-base">結語：理財是為生活賦權，認知是最後的護城河</h4>
         <p>
           當我們在談論 AI 與財務時，許多人誤以為重點在於「尋找更快的暴富捷徑」。但真相恰恰相反：<strong>AI 最大的價值，是做為客觀鏡子幫我們看見金錢盲點、整理龐雜數據、過濾雜訊；而真正保護我們與家人的，始終是清醒的自我認知、合乎人性的預算紀律，以及面對未知詐騙時願意停下來求證的決策定力。</strong>
