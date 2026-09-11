@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scam • AI 時代智慧財務分析、認知防禦與全維度金融防詐工程論 | 報告人：Howard Liao Ph.D. (廖倫豪 博士)</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pharaoh: {
+              bg: '#FAF8F5',
+              card: '#FFFFFF',
+              dark: '#1E293B',
+              text: '#334155',
+              muted: '#64748B',
+              orange: '#C2410C',
+              orangeLight: '#EA580C',
+              amber: '#D97706',
+              amberLight: '#F59E0B',
+              gold: '#B45309',
+              sand: '#FEF3C7',
+              sandDark: '#FDE68A',
+              rust: '#9A3412',
+              accent: '#7C2D12'
+            }
+          },
+          fontFamily: {
+            sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Noto Sans TC', 'sans-serif'],
+            serif: ['Georgia', 'Cambria', 'Noto Serif TC', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700;900&display=swap');
+    
+    body {
+      background-color: #FAF8F5;
+      color: #334155;
+      font-family: 'Noto Sans TC', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .pharaoh-gradient {
+      background: linear-gradient(135deg, #7C2D12 0%, #C2410C 50%, #D97706 100%);
+    }
+
+    .pharaoh-shadow {
+      box-shadow: 0 10px 25px -5px rgba(194, 65, 12, 0.08), 0 8px 10px -6px rgba(194, 65, 12, 0.04);
+    }
+
+    .badge-pharaoh {
+      background: #FEF3C7;
+      color: #9A3412;
+      border: 1px solid #FDE68A;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAF8F5;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D97706;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #C2410C;
+    }
+  </style>
+</head>
+<body class="bg-pharaoh-bg text-pharaoh-text min-h-screen flex flex-col">
+
+  <!-- Top Progress Bar -->
+  <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-pharaoh-orange z-50 transition-all duration-150" style="width: 0%;"></div>
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 bg-white/95 backdrop-blur border-b border-pharaoh-sandDark z-40 transition-all shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <span class="w-9 h-9 rounded-lg pharaoh-gradient flex items-center justify-center text-white font-bold text-lg shadow">
+          <i class="fa-solid fa-shield-halved"></i>
+        </span>
+        <div>
+          <span class="font-bold text-pharaoh-dark tracking-tight block text-sm sm:text-base">Scam • 金融防詐與財務工程</span>
+          <span class="text-xs text-pharaoh-orange font-semibold block sm:inline">Howard Liao Ph.D. 專著</span>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-pharaoh-muted">
+        <a href="#executive-summary" class="hover:text-pharaoh-orange transition">核心提要</a>
+        <a href="#financial-pyramid" class="hover:text-pharaoh-orange transition">理財金字塔</a>
+        <a href="#calculator-section" class="hover:text-pharaoh-orange transition">健康試算</a>
+        <a href="#prompt-hub" class="hover:text-pharaoh-orange transition">AI 提示詞庫</a>
+        <a href="#cognitive-defense" class="hover:text-pharaoh-orange transition">認知防禦</a>
+        <a href="#fraud-simulation" class="text-pharaoh-orange font-bold hover:text-pharaoh-rust transition flex items-center space-x-1">
+          <i class="fa-solid fa-bullhorn text-xs"></i>
+          <span>防詐情境模擬 (專案與考題)</span>
+        </a>
+        <a href="#sop-checklist" class="hover:text-pharaoh-orange transition">落地守則</a>
+      </nav>
+
+      <!-- Action Button -->
+      <div class="flex items-center space-x-3">
+        <a href="#fraud-simulation" class="bg-pharaoh-orange hover:bg-pharaoh-orangeLight text-white px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition shadow flex items-center space-x-1">
+          <i class="fa-solid fa-clipboard-check"></i>
+          <span>全真防詐測驗</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-b from-amber-50/60 via-orange-50/30 to-pharaoh-bg pt-12 pb-16 border-b border-pharaoh-sandDark/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-8 space-y-6">
+          <div class="inline-flex items-center space-x-2 badge-pharaoh px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase">
+            <i class="fa-solid fa-crown text-pharaoh-amber"></i>
+            <span>Project Scam • Executive Treatise & AI Architecture</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-pharaoh-dark tracking-tight leading-tight">
+            AI 時代的智慧財務分析、<br class="hidden sm:inline"/>
+            <span class="text-transparent bg-clip-text pharaoh-gradient">認知防禦與全維度金融防詐</span>工程論
+          </h1>
+
+          <p class="text-base sm:text-lg text-pharaoh-text leading-relaxed">
+            結合生態系統理論、UNSGSA 普惠財務健康標準、橫山光昭浪費錢包機制、LLM 金融分析提示工程，與 165 全真反詐攻防情境模擬之完整專案。
+          </p>
+
+          <div class="pt-2 flex flex-wrap items-center gap-4 text-sm text-pharaoh-muted">
+            <div class="flex items-center space-x-2 bg-white px-3 py-1.5 rounded-md border border-pharaoh-sandDark shadow-sm">
+              <i class="fa-solid fa-user-tie text-pharaoh-orange"></i>
+              <span class="font-bold text-pharaoh-dark">報告人：Howard Liao Ph.D. (廖倫豪 博士)</span>
+            </div>
+            <div class="flex items-center space-x-2 bg-white px-3 py-1.5 rounded-md border border-pharaoh-sandDark shadow-sm">
+              <i class="fa-solid fa-id-badge text-pharaoh-amber"></i>
+              <span>CIO / CISO / CDAIO • Forward-Deployed AI Architect</span>
+            </div>
+            <div class="flex items-center space-x-2 bg-white px-3 py-1.5 rounded-md border border-pharaoh-sandDark shadow-sm">
+              <i class="fa-brands fa-github text-pharaoh-gold"></i>
+              <span>GitHub: HowardLiao / Scam</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Summary Card -->
+        <div class="lg:col-span-4 bg-white p-6 rounded-2xl border-2 border-pharaoh-sandDark pharaoh-shadow relative">
+          <div class="absolute -top-3 -right-3 w-10 h-10 rounded-full pharaoh-gradient flex items-center justify-center text-white text-sm shadow">
+            <i class="fa-solid fa-compass"></i>
+          </div>
+          <h3 class="text-base font-bold text-pharaoh-dark mb-4 flex items-center space-x-2">
+            <i class="fa-solid fa-quote-left text-pharaoh-orange"></i>
+            <span>核心架構公理</span>
+          </h3>
+          <ul class="space-y-3 text-xs sm:text-sm text-pharaoh-text">
+            <li class="flex items-start space-x-2">
+              <span class="text-pharaoh-orange font-bold">1.</span>
+              <span><strong>理財本質：</strong>理財不是單純累積數字，而是建構家庭在面對不確定性時的<strong>「人生選擇權」</strong>。</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-pharaoh-orange font-bold">2.</span>
+              <span><strong>AI 定位：</strong>AI 是第二副駕駛（智囊），非投資明牌；最終決策與責任邊界始終在人。</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-pharaoh-orange font-bold">3.</span>
+              <span><strong>認知護城河：</strong>真正保護資產的不是預測未來的能力，而是<strong>「我可能會看錯」的容錯心態與延遲判斷</strong>。</span>
+            </li>
+            <li class="flex items-start space-x-2">
+              <span class="text-pharaoh-orange font-bold">4.</span>
+              <span><strong>零信任防詐：</strong>「高報酬往往不是在販售投資，而是在販售你的焦慮。」全面啟動 <strong>STOP 阻斷協議</strong>。</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Container -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-20 flex-grow">
+
+    <!-- CHAPTER 1: 核心提要與普惠財務健康模型 -->
+    <section id="executive-summary" class="scroll-mt-24 space-y-8">
+      <div class="border-l-4 border-pharaoh-orange pl-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-pharaoh-orange">Chapter 1 • Theoretical Foundation</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-pharaoh-dark mt-1">普惠金融健康框架與財務焦慮解構</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-5 rounded-xl border border-pharaoh-sandDark pharaoh-shadow hover:border-pharaoh-orange transition">
+          <div class="w-10 h-10 rounded-lg bg-orange-100 text-pharaoh-orange flex items-center justify-center font-bold text-lg mb-4">
+            <i class="fa-solid fa-scale-balanced"></i>
+          </div>
+          <h3 class="font-bold text-pharaoh-dark text-base mb-2">① 日常收支平衡</h3>
+          <p class="text-xs text-pharaoh-muted leading-relaxed">
+            月收入 ＞ 月支出、年收入 ＞ 年支出。無須依賴高利循環貸或長期借貸支應基本生計，具有自主現金流。
+          </p>
+        </div>
+
+        <div class="bg-white p-5 rounded-xl border border-pharaoh-sandDark pharaoh-shadow hover:border-pharaoh-orange transition">
+          <div class="w-10 h-10 rounded-lg bg-amber-100 text-pharaoh-amber flex items-center justify-center font-bold text-lg mb-4">
+            <i class="fa-solid fa-vault"></i>
+          </div>
+          <h3 class="font-bold text-pharaoh-dark text-base mb-2">② 流動儲備韌性</h3>
+          <p class="text-xs text-pharaoh-muted leading-relaxed">
+            具備 3～6 個月不可動用的緊急預備金。在遭遇失業、疾病或家庭變故時，能提供充足的抗壓緩衝時間。
+          </p>
+        </div>
+
+        <div class="bg-white p-5 rounded-xl border border-pharaoh-sandDark pharaoh-shadow hover:border-pharaoh-orange transition">
+          <div class="w-10 h-10 rounded-lg bg-yellow-100 text-pharaoh-gold flex items-center justify-center font-bold text-lg mb-4">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <h3 class="font-bold text-pharaoh-dark text-base mb-2">③ 跨期長期規劃</h3>
+          <p class="text-xs text-pharaoh-muted leading-relaxed">
+            清晰的退休、置產、子女教育或長照準備藍圖。透過指數化與股債配置持續複利累積非工資收入。
+          </p>
+        </div>
+
+        <div class="bg-white p-5 rounded-xl border border-pharaoh-sandDark pharaoh-shadow hover:border-pharaoh-orange transition">
+          <div class="w-10 h-10 rounded-lg bg-red-100 text-pharaoh-rust flex items-center justify-center font-bold text-lg mb-4">
+            <i class="fa-solid fa-shield-heart"></i>
+          </div>
+          <h3 class="font-bold text-pharaoh-dark text-base mb-2">④ 財務安全與掌控感</h3>
+          <p class="text-xs text-pharaoh-muted leading-relaxed">
+            對個人及家庭資產具備透徹的知情權，免於金融詐騙恐慌與非理性衝動，享有有尊嚴的生活自主權。
+          </p>
+        </div>
+      </div>
+
+      <!-- 生態系統理論 Card -->
+      <div class="bg-white p-6 sm:p-8 rounded-2xl border border-pharaoh-sandDark shadow-sm">
+        <h3 class="text-lg font-bold text-pharaoh-dark mb-3 flex items-center space-x-2 text-pharaoh-orange">
+          <i class="fa-solid fa-network-wired"></i>
+          <span>生態系統理論 (Ecosystem Theory) 在財務工程中的映射</span>
+        </h3>
+        <p class="text-sm text-pharaoh-text leading-relaxed mb-4">
+          人的財務決策從來不是孤立的數學計算，而是個人、家庭、職場、社群與總體經濟等多層環境交互作用的產物。理解個人的財務困境與行為偏誤，必須從<strong>微觀（心理/能力）、中觀（家庭責任/照顧負擔）至鉅觀（通膨/法規/高齡社會）</strong>全維度審視。
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 text-center text-xs">
+          <div class="p-3 bg-pharaoh-bg rounded-lg border border-pharaoh-sandDark">
+            <span class="font-bold text-pharaoh-dark block">角色承擔</span>
+            <span class="text-pharaoh-muted">親職/照顧者</span>
+          </div>
+          <div class="p-3 bg-pharaoh-bg rounded-lg border border-pharaoh-sandDark">
+            <span class="font-bold text-pharaoh-dark block">社會地位</span>
+            <span class="text-pharaoh-muted">利基與棲息地</span>
+          </div>
+          <div class="p-3 bg-pharaoh-bg rounded-lg border border-pharaoh-sandDark">
+            <span class="font-bold text-pharaoh-dark block">環境適應力</span>
+            <span class="text-pharaoh-muted">抗通膨/應變力</span>
+          </div>
+          <div class="p-3 bg-pharaoh-bg rounded-lg border border-pharaoh-sandDark">
+            <span class="font-bold text-pharaoh-dark block">生命週期</span>
+            <span class="text-pharaoh-muted">青年/壯年/銀髮</span>
+          </div>
+          <div class="p-3 bg-pharaoh-bg rounded-lg border border-pharaoh-sandDark">
+            <span class="font-bold text-pharaoh-dark block">人際關聯</span>
+            <span class="text-pharaoh-muted">家庭/親友支持網</span>
+          </div>
+          <div class="p-3 bg-pharaoh-bg rounded-lg border border-pharaoh-sandDark">
+            <span class="font-bold text-pharaoh-dark block">勝任能力</span>
+            <span class="text-pharaoh-muted">財商知能/辨詐力</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 2: 四層人生理財金字塔與生命週期地圖 -->
+    <section id="financial-pyramid" class="scroll-mt-24 space-y-8">
+      <div class="border-l-4 border-pharaoh-orange pl-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-pharaoh-orange">Chapter 2 • Asset Allocation Model</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-pharaoh-dark mt-1">四層人生理財金字塔與 5W1H 預算解碼</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-5 space-y-3">
+          <div class="p-4 rounded-xl bg-gradient-to-r from-red-600 to-orange-600 text-white shadow cursor-pointer hover:scale-[1.02] transition" onclick="selectLayer(4)">
+            <div class="flex justify-between items-center text-xs font-bold mb-1">
+              <span>第 4 層 • 加值層 (Wealth Acceleration)</span>
+              <span>5% ~ 10%</span>
+            </div>
+            <p class="text-xs opacity-90">本業商業槓桿、包租代管、加盟創投（嚴控下行風險）</p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow cursor-pointer hover:scale-[1.02] transition" onclick="selectLayer(3)">
+            <div class="flex justify-between items-center text-xs font-bold mb-1">
+              <span>第 3 層 • 成長層 (Core Growth & ETF)</span>
+              <span>30% ~ 50%</span>
+            </div>
+            <p class="text-xs opacity-90">指數化投資、全球廣泛型 ETF、股債再平衡、複利增長</p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-gradient-to-r from-amber-600 to-yellow-600 text-white shadow cursor-pointer hover:scale-[1.02] transition" onclick="selectLayer(2)">
+            <div class="flex justify-between items-center text-xs font-bold mb-1">
+              <span>第 2 層 • 防禦層 (Risk Management & Insurance)</span>
+              <span>10% ~ 15%</span>
+            </div>
+            <p class="text-xs opacity-90">實支實付醫療、意外險、重大傷病、長照險（轉移極端風險）</p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-gradient-to-r from-slate-700 to-slate-900 text-white shadow cursor-pointer hover:scale-[1.02] transition" onclick="selectLayer(1)">
+            <div class="flex justify-between items-center text-xs font-bold mb-1">
+              <span>第 1 層 • 基礎層 (Liquidity & Emergency Reserve)</span>
+              <span>30% ~ 40%</span>
+            </div>
+            <p class="text-xs opacity-90">日常開支穩定、3～6個月高流動性緊急預備金、零高利負債</p>
+          </div>
+
+          <p class="text-xs text-pharaoh-muted italic text-center pt-2">
+            💡 點擊上方各層級，右側可查看詳細工程規範與策略清單。
+          </p>
+        </div>
+
+        <div class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-2xl border border-pharaoh-sandDark pharaoh-shadow" id="layer-detail-box">
+          <div id="layer-detail-content">
+            <span class="badge-pharaoh px-2.5 py-1 rounded text-xs font-bold">層級詳解</span>
+            <h3 class="text-xl font-bold text-pharaoh-dark mt-2 mb-3" id="layer-title">第 1 層 • 基礎層：現金流與緊急預備金池</h3>
+            <p class="text-sm text-pharaoh-text leading-relaxed mb-4" id="layer-desc">
+              資產大廈的基石。缺乏流動性儲備的家庭，任何一次生病或失業都會被迫變賣核心資產或陷入高利借貸。核心在於：嚴格區分「固定支出」與「變動支出」，確保 3~6 個月月開支完全鎖定在無風險、高流動性工具中。
+            </p>
+            <div class="bg-pharaoh-bg p-4 rounded-xl border border-pharaoh-sandDark space-y-2 text-xs">
+              <div class="font-bold text-pharaoh-orange">🔧 執行 SOP 與工具推薦：</div>
+              <ul class="list-disc list-inside space-y-1 text-pharaoh-text">
+                <li><strong>工具選擇：</strong>數位高利活存、階梯式定存、貨幣市場基金。</li>
+                <li><strong>容量標準：</strong>單身者 3 個月基本開銷；扶養老幼家庭 6~12 個月開銷。</li>
+                <li><strong>禁忌行為：</strong>切勿將緊急預備金投入股票當沖、期貨或承諾高息的民間借貸。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 3: 互動式財務健康度評測 -->
+    <section id="calculator-section" class="scroll-mt-24 space-y-8">
+      <div class="border-l-4 border-pharaoh-orange pl-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-pharaoh-orange">Chapter 3 • Interactive Assessment</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-pharaoh-dark mt-1">互動式家庭財務健康度與抗詐韌性診斷儀</h2>
+      </div>
+
+      <div class="bg-white p-6 sm:p-8 rounded-2xl border-2 border-pharaoh-sandDark pharaoh-shadow">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 space-y-5">
+            <div>
+              <div class="flex justify-between text-xs sm:text-sm font-bold text-pharaoh-dark mb-1">
+                <span>1. 每月收支結餘率（(月收入 - 月支出) / 月收入）</span>
+                <span id="savings-rate-val" class="text-pharaoh-orange">20%</span>
+              </div>
+              <input type="range" id="savings-rate" min="-50" max="70" value="20" class="w-full accent-pharaoh-orange cursor-pointer" oninput="calculateHealthScore()">
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs sm:text-sm font-bold text-pharaoh-dark mb-1">
+                <span>2. 緊急預備金水位（可支應月數）</span>
+                <span id="emergency-fund-val" class="text-pharaoh-orange">6 個月</span>
+              </div>
+              <input type="range" id="emergency-fund" min="0" max="24" value="6" class="w-full accent-pharaoh-orange cursor-pointer" oninput="calculateHealthScore()">
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs sm:text-sm font-bold text-pharaoh-dark mb-1">
+                <span>3. 投資商品透明度與自我理解度</span>
+                <span id="knowledge-val" class="text-pharaoh-orange">7 分</span>
+              </div>
+              <input type="range" id="knowledge" min="1" max="10" value="7" class="w-full accent-pharaoh-orange cursor-pointer" oninput="calculateHealthScore()">
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs sm:text-sm font-bold text-pharaoh-dark mb-1">
+                <span>4. 遭遇高息誘惑時的查證與防禦習慣</span>
+                <span id="defense-val" class="text-pharaoh-orange">8 分</span>
+              </div>
+              <input type="range" id="defense" min="1" max="10" value="8" class="w-full accent-pharaoh-orange cursor-pointer" oninput="calculateHealthScore()">
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 p-6 rounded-xl border border-pharaoh-sandDark text-center space-y-4">
+            <span class="badge-pharaoh px-3 py-1 rounded-full text-xs font-bold">綜合成績評定</span>
+            <div class="text-5xl sm:text-6xl font-black text-transparent bg-clip-text pharaoh-gradient tracking-tight" id="score-number">
+              82
+            </div>
+            <div class="text-sm font-bold text-pharaoh-dark" id="score-grade">
+              等級：穩健成長型 • 風險防禦優異
+            </div>
+            <p class="text-xs text-pharaoh-text leading-relaxed text-left bg-white/80 p-3 rounded-lg border border-amber-200" id="score-advice">
+              您具備良好的預備金與理性防禦能力！建議持續維持定期定額指數化佈局，定期檢視保單條款以因應未來通膨醫療支出。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 4: AI 賦能金融分析實戰 Prompt 庫 -->
+    <section id="prompt-hub" class="scroll-mt-24 space-y-8">
+      <div class="border-l-4 border-pharaoh-orange pl-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-pharaoh-orange">Chapter 4 • AI Prompt Engineering</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-pharaoh-dark mt-1">AI 賦能金融分析實戰 Prompt 提示詞庫</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-2xl border border-pharaoh-sandDark pharaoh-shadow space-y-3 relative">
+          <div class="flex justify-between items-center">
+            <span class="badge-pharaoh px-2.5 py-0.5 rounded text-xs font-bold">Prompt 01</span>
+            <button onclick="copyPrompt('p1')" class="text-xs text-pharaoh-orange hover:text-pharaoh-rust font-bold flex items-center space-x-1">
+              <i class="fa-regular fa-copy"></i>
+              <span id="p1-btn">複製提示詞</span>
+            </button>
+          </div>
+          <h3 class="font-bold text-pharaoh-dark text-base">家庭收支黑洞結構化診斷</h3>
+          <div class="bg-slate-900 text-slate-100 p-4 rounded-xl text-xs font-mono leading-relaxed overflow-x-auto select-all" id="p1">
+請扮演資深客觀的個人財務架構師（非理專、不推銷任何產品）。
+以下為我的家庭月收支數據：
+- 月總收入：[請填寫金額，如：85,000元]
+- 固定支出：房貸/租金 [25,000]、水電電信 [4,000]、保險費 [6,000]
+- 變動支出：餐飲飲食 [18,000]、交通加油 [4,000]、休閒娛樂 [8,000]
+- 孝親/教育/其他：[10,000]
+- 現有緊急預備金：[150,000元]
+
+請為我進行以下分析：
+1. 依據 50/30/20 預算模型，指出我最嚴重的 2 個「隱性金錢黑洞」。
+2. 計算我的緊急預備金安全月數，並給出優化建議。
+3. 提供一套「浪費錢包 (心理緩衝)」上限建議，讓記帳能可持續執行。
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-pharaoh-sandDark pharaoh-shadow space-y-3 relative">
+          <div class="flex justify-between items-center">
+            <span class="badge-pharaoh px-2.5 py-0.5 rounded text-xs font-bold">Prompt 02</span>
+            <button onclick="copyPrompt('p2')" class="text-xs text-pharaoh-orange hover:text-pharaoh-rust font-bold flex items-center space-x-1">
+              <i class="fa-regular fa-copy"></i>
+              <span id="p2-btn">複製提示詞</span>
+            </button>
+          </div>
+          <h3 class="font-bold text-pharaoh-dark text-base">ETF 指標交叉比對與底層持股透視</h3>
+          <div class="bg-slate-900 text-slate-100 p-4 rounded-xl text-xs font-mono leading-relaxed overflow-x-auto select-all" id="p2">
+請扮演客觀的量化資產配置專家，幫我客觀比較以下 ETF 標的：
+標的：[如 0050、0056、00878、00919]
+
+請依據公開數據與金融原理，輸出以下結構化比較矩陣：
+1. 底層資產選股邏輯差異（市值型 vs 高股息型 vs 因子動能）。
+2. 內扣總費用率（含管理費、經理費、交易成本）之長期複利侵蝕評估。
+3. 「配息率 ≠ 實質報酬率」之迷思解析：平準金機制與本金返還風險。
+4. 針對 30 歲累積期與 60 歲退休期，分別給出客觀配置權重建議與原因。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 5: 認知偏誤防禦與金融商品識讀 -->
+    <section id="cognitive-defense" class="scroll-mt-24 space-y-8">
+      <div class="border-l-4 border-pharaoh-orange pl-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-pharaoh-orange">Chapter 5 • Cognitive Defense</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-pharaoh-dark mt-1">認知偏誤防禦體系與金融商品識讀矩陣</h2>
+      </div>
+
+      <div class="bg-white p-6 sm:p-8 rounded-2xl border border-pharaoh-sandDark shadow-sm space-y-6">
+        <h3 class="text-lg font-bold text-pharaoh-dark flex items-center space-x-2 text-pharaoh-orange">
+          <i class="fa-solid fa-brain"></i>
+          <span>資訊識讀與防範認知偏誤的五大工程協議</span>
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4 text-xs">
+          <div class="p-4 bg-pharaoh-bg rounded-xl border border-pharaoh-sandDark space-y-2">
+            <span class="w-6 h-6 rounded-full bg-pharaoh-orange text-white flex items-center justify-center font-bold text-xs">1</span>
+            <div class="font-bold text-pharaoh-dark text-sm">建立「我可能會看錯」的意識</div>
+            <p class="text-pharaoh-muted">承認自己有認知盲點。看到高誘惑訊息時先說一句：「也有可能不是這樣」。覺察比自認正確更重要。</p>
+          </div>
+          <div class="p-4 bg-pharaoh-bg rounded-xl border border-pharaoh-sandDark space-y-2">
+            <span class="w-6 h-6 rounded-full bg-pharaoh-orange text-white flex items-center justify-center font-bold text-xs">2</span>
+            <div class="font-bold text-pharaoh-dark text-sm">嚴格區分「事實 vs 觀點」</div>
+            <p class="text-pharaoh-muted">「這檔股票必漲」是主觀意見；「該公司上季營收年減15%」是客觀事實。事實可被客觀驗證，意見需要嚴格討論。</p>
+          </div>
+          <div class="p-4 bg-pharaoh-bg rounded-xl border border-pharaoh-sandDark space-y-2">
+            <span class="w-6 h-6 rounded-full bg-pharaoh-orange text-white flex items-center justify-center font-bold text-xs">3</span>
+            <div class="font-bold text-pharaoh-dark text-sm">溯源檢查「誰在說？利益何在？」</div>
+            <p class="text-pharaoh-muted">資訊本身沒有立場，但來源有。問三個問題：誰說的？為什麼說（賺佣金/賺流量）？有無經金管會監管的第三方信源？</p>
+          </div>
+          <div class="p-4 bg-pharaoh-bg rounded-xl border border-pharaoh-sandDark space-y-2">
+            <span class="w-6 h-6 rounded-full bg-pharaoh-orange text-white flex items-center justify-center font-bold text-xs">4</span>
+            <div class="font-bold text-pharaoh-dark text-sm">避開「單一敘事」盲從</div>
+            <p class="text-pharaoh-muted">同一議題主動尋求 2～3 種截然不同的立場（如多空論點、正反方財報解讀），杜絕資訊繭房造成的自證陷阱。</p>
+          </div>
+          <div class="p-4 bg-pharaoh-bg rounded-xl border border-pharaoh-sandDark space-y-2">
+            <span class="w-6 h-6 rounded-full bg-pharaoh-orange text-white flex items-center justify-center font-bold text-xs">5</span>
+            <div class="font-bold text-pharaoh-dark text-sm">落實「延遲判斷」冷卻期</div>
+            <p class="text-pharaoh-muted">現代社群刻意製造「限時、錯過不再」的恐慌感。強制設定 24~48 小時決策冷卻期，不立刻轉帳、不衝動簽約。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER 6: 金融詐騙宣導專案資料庫與情境模擬考題 (重點專案整合) -->
+    <section id="fraud-simulation" class="scroll-mt-24 space-y-10">
+      <div class="border-l-4 border-red-600 pl-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-red-600">Chapter 6 • Special Anti-Fraud Hub</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-pharaoh-dark mt-1">金融詐騙宣導專案資料庫與全真情境模擬考題</h2>
+      </div>
+
+      <!-- PART A: 宣導專案資料庫 (5大代表性案例 + 深度案例剖析 + 心理分析) -->
+      <div class="bg-white p-6 sm:p-8 rounded-2xl border-2 border-pharaoh-sandDark pharaoh-shadow space-y-8">
+        <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 pb-4 border-b border-pharaoh-sandDark">
+          <div>
+            <span class="badge-pharaoh px-2.5 py-0.5 rounded text-xs font-bold">專案宣導核心資料庫</span>
+            <h3 class="text-xl font-bold text-pharaoh-dark mt-1 flex items-center space-x-2">
+              <i class="fa-solid fa-bullhorn text-pharaoh-orange"></i>
+              <span>台灣近期代表性金融詐騙案例與受害心理深度解構</span>
+            </h3>
+          </div>
+          <div class="flex items-center space-x-2 text-xs">
+            <a href="https://165.npa.gov.tw/" target="_blank" class="px-3 py-1.5 bg-red-50 text-red-700 border border-red-200 rounded-lg hover:bg-red-100 font-bold flex items-center space-x-1">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <span>165 全民防騙網</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 5 代表性案例卡片 (來自 1150831 docx) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 text-xs">
+          
+          <!-- Case 1 -->
+          <div class="p-5 bg-red-50/50 rounded-xl border border-red-200 space-y-3 flex flex-col justify-between">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="px-2 py-0.5 bg-red-200 text-red-900 rounded font-bold text-[11px]">案例 1</span>
+                <span class="text-red-600 font-semibold">先給甜頭，再要求加碼</span>
+              </div>
+              <h4 class="font-bold text-sm text-pharaoh-dark">LINE 投資群組「老師帶你賺」飆股詐騙</h4>
+              <p class="text-pharaoh-text leading-relaxed">
+                退休民眾看 FB 廣告加入 LINE 群，群內每天分享獲利截圖與假學員感謝。投入 10 萬很快獲利並成功提領，隨後陸續加碼 500 萬元，平台以補繳保證金為由拒絕出金。
+              </p>
+              <div class="p-2.5 bg-white/80 rounded border border-red-200 text-[11px] space-y-1">
+                <strong class="text-red-800 block">🤖 AI 模擬話術：</strong>
+                <span class="italic text-pharaoh-muted">「老師：恭喜妳今天又賺8%，我們AI模型勝率95%，下星期行情更好，現在會員都在加碼。」</span>
+              </div>
+            </div>
+            <div class="pt-2 border-t border-red-200 text-[11px] text-red-800 font-semibold">
+              💡 核心警示：能提領一次不代表合法！保證獲利必為警訊。
+            </div>
+          </div>
+
+          <!-- Case 2 -->
+          <div class="p-5 bg-orange-50/50 rounded-xl border border-orange-200 space-y-3 flex flex-col justify-between">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="px-2 py-0.5 bg-orange-200 text-orange-900 rounded font-bold text-[11px]">案例 2</span>
+                <span class="text-orange-700 font-semibold">陪伴兩個月，只為騙走存款</span>
+              </div>
+              <h4 class="font-bold text-sm text-pharaoh-dark">假交友＋投資「殺豬盤 (Romance Scam)」</h4>
+              <p class="text-pharaoh-text leading-relaxed">
+                自稱海外工作男子天天噓寒問暖兩個月建立感情，隨後分享自己投資外匯與虛擬貨幣獲利，引導主婦匯款。帳面獲利飆升但提款時要求補繳保證金，最終血本無歸。
+              </p>
+              <div class="p-2.5 bg-white/80 rounded border border-orange-200 text-[11px] space-y-1">
+                <strong class="text-orange-800 block">🤖 AI 模擬話術：</strong>
+                <span class="italic text-pharaoh-muted">「對方：我不是要妳投資，我只是希望妳跟我一起變好。我今天又賺了20萬，我可以教妳。」</span>
+              </div>
+            </div>
+            <div class="pt-2 border-t border-orange-200 text-[11px] text-orange-800 font-semibold">
+              💡 核心警示：感情建立後推薦投資，是典型「養套殺」手法。
+            </div>
+          </div>
+
+          <!-- Case 3 -->
+          <div class="p-5 bg-amber-50/50 rounded-xl border border-amber-200 space-y-3 flex flex-col justify-between">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="px-2 py-0.5 bg-amber-200 text-amber-900 rounded font-bold text-[11px]">案例 3</span>
+                <span class="text-amber-700 font-semibold">假權威與西裝識別證</span>
+              </div>
+              <h4 class="font-bold text-sm text-pharaoh-dark">假女理專、假金融專家保證高獲利</h4>
+              <p class="text-pharaoh-text leading-relaxed">
+                冒充銀行理專或投顧專家，出示偽造工作證，宣稱掌握 AI 選股模型、內線消息與保本固定收益，誘導民眾匯款數百萬元至人頭帳戶，幸得臨櫃行員察覺攔阻。
+              </p>
+              <div class="p-2.5 bg-white/80 rounded border border-amber-200 text-[11px] space-y-1">
+                <strong class="text-amber-800 block">🤖 AI 模擬話術：</strong>
+                <span class="italic text-pharaoh-muted">「理專：我們公司AI每天分析全球股市，年報酬20%很正常，而且完全保本。」</span>
+              </div>
+            </div>
+            <div class="pt-2 border-t border-amber-200 text-[11px] text-amber-800 font-semibold">
+              💡 核心警示：正規金融人員一定會提醒風險，只有詐騙才保證獲利。
+            </div>
+          </div>
+
+          <!-- Case 4 -->
+          <div class="p-5 bg-yellow-50/50 rounded-xl border border-yellow-200 space-y-3 flex flex-col justify-between">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="px-2 py-0.5 bg-yellow-200 text-yellow-900 rounded font-bold text-[11px]">案例 4</span>
+                <span class="text-yellow-800 font-semibold">沉沒成本效應</span>
+              </div>
+              <h4 class="font-bold text-sm text-pharaoh-dark">假黃金／實體貴金屬投資詐騙</h4>
+              <p class="text-pharaoh-text leading-relaxed">
+                前期真的交付小量真金建立極度信任，宣稱「黃金即將大漲、大量進貨」，受害者投入數百萬後貨物藉故延遲並要求補款升級會員，利用不甘停損心理持續套牢。
+              </p>
+              <div class="p-2.5 bg-white/80 rounded border border-yellow-200 text-[11px] space-y-1">
+                <strong class="text-yellow-900 block">🤖 AI 模擬話術：</strong>
+                <span class="italic text-pharaoh-muted">「客服：今天黃金價格要噴出了，只差您最後100萬元，不然會員資格直接取消。」</span>
+              </div>
+            </div>
+            <div class="pt-2 border-t border-yellow-200 text-[11px] text-yellow-900 font-semibold">
+              💡 核心警示：收到第一批商品反而更危險！已投入越多越要勇敢停損。
+            </div>
+          </div>
+
+          <!-- Case 5 -->
+          <div class="p-5 bg-slate-50 rounded-xl border border-slate-200 space-y-3 flex flex-col justify-between">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="px-2 py-0.5 bg-slate-200 text-slate-900 rounded font-bold text-[11px]">案例 5</span>
+                <span class="text-slate-700 font-semibold">利用恐懼急於自清</span>
+              </div>
+              <h4 class="font-bold text-sm text-pharaoh-dark">假檢警＋AI 深偽語音公文詐騙</h4>
+              <p class="text-pharaoh-text leading-relaxed">
+                利用 AI 變聲與偽造傳票，冒充檢警聲稱帳戶涉及洗錢，恐嚇「偵查不公開不得告訴家人」，要求把名下定存解約換成黃金或交付現金由專人「國家公證監管」。
+              </p>
+              <div class="p-2.5 bg-white/80 rounded border border-slate-200 text-[11px] space-y-1">
+                <strong class="text-slate-800 block">🤖 AI 模擬話術：</strong>
+                <span class="italic text-pharaoh-muted">「假警察：妳涉嫌跨國洗錢，現在不能跟任何人說，請立刻把存款提出來交由專員保管。」</span>
+              </div>
+            </div>
+            <div class="pt-2 border-t border-slate-200 text-[11px] text-slate-800 font-semibold">
+              💡 核心警示：司法機關絕不會用 LINE 辦案，絕不會要求監管交付財產。
+            </div>
+          </div>
+
+          <!-- Case 6: 深度案 -->
+          <div class="p-5 bg-red-100/60 rounded-xl border-2 border-red-300 space-y-3 flex flex-col justify-between">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="px-2 py-0.5 bg-red-600 text-white rounded font-bold text-[11px]">深度案例</span>
+                <span class="text-red-700 font-bold">老後焦慮與二胎套殺</span>
+              </div>
+              <h4 class="font-bold text-sm text-red-950">「我不是想發財，我只是想安心退休」</h4>
+              <p class="text-red-900 leading-relaxed">
+                七旬婦人坐擁 5,000 萬房產，月開銷 15~20 萬，擔憂老後拖累子女。聽信農會主管背書民間借貸 15% 年息，投入 2,000 萬後借貸公司失聯，更辦理 1,500 萬二胎房貸套殺。
+              </p>
+              <div class="p-2.5 bg-white/90 rounded border border-red-300 text-[11px]">
+                <strong class="text-red-900 block">💬 哲學反思：</strong>
+                <span class="text-red-800">「高報酬往往不是在販售投資，而是在販售你的焦慮。」</span>
+              </div>
+            </div>
+            <div class="pt-2 border-t border-red-300 text-[11px] text-red-950 font-bold">
+              🛡️ CISO 阻斷：高齡應選公股銀行正規「以房養老」或「安養信託」。
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 投資前必問四問題 (來自 docx) -->
+        <div class="p-6 bg-gradient-to-r from-orange-50 via-amber-50 to-orange-100 rounded-xl border border-pharaoh-sandDark space-y-3">
+          <h4 class="font-bold text-pharaoh-dark text-sm flex items-center space-x-2 text-pharaoh-orange">
+            <i class="fa-solid fa-circle-question"></i>
+            <span>任何重大投資之前，先問自己四個問題（黃金自省協議）</span>
+          </h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+            <div class="p-3 bg-white rounded-lg border border-amber-200">
+              <strong class="text-pharaoh-dark block mb-1">1. 如果全部賠光，我還能生活嗎？</strong>
+              <span class="text-pharaoh-muted">壓力測試家庭底線，絕不用生存救命錢投機。</span>
+            </div>
+            <div class="p-3 bg-white rounded-lg border border-amber-200">
+              <strong class="text-pharaoh-dark block mb-1">2. 我真的了解它怎麼賺錢嗎？</strong>
+              <span class="text-pharaoh-muted">底層商業模式合不合理？還是純粹龐氏資金盤？</span>
+            </div>
+            <div class="p-3 bg-white rounded-lg border border-amber-200">
+              <strong class="text-pharaoh-dark block mb-1">3. 為什麼它願意給我這麼高的報酬？</strong>
+              <span class="text-pharaoh-muted">超額報酬從何而來？無風險利率僅 1.5%，15% 背後有何黑幕？</span>
+            </div>
+            <div class="p-3 bg-white rounded-lg border border-amber-200">
+              <strong class="text-pharaoh-dark block mb-1">4. 如果今天是我的家人，我會同意嗎？</strong>
+              <span class="text-pharaoh-muted">跳脫自身貪婪與恐懼，以旁觀者清的理性視角審視。</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 防詐推理王討論指引 (來自 docx) -->
+        <div class="p-5 bg-pharaoh-bg rounded-xl border border-pharaoh-sandDark space-y-3">
+          <h4 class="font-bold text-pharaoh-dark text-sm flex items-center space-x-2 text-pharaoh-orange">
+            <i class="fa-solid fa-users-viewfinder"></i>
+            <span>「防詐推理王」分組研討與 AI 查證提問 SOP</span>
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-3 text-xs">
+            <div class="p-3 bg-white rounded-lg border border-pharaoh-sandDark">
+              <strong class="text-pharaoh-dark block mb-1">Step 1. 建立信任</strong>
+              <span class="text-pharaoh-muted">找出詐騙集團第一步如何降低你的戒心（小額出金/送商品/溫情陪伴）。</span>
+            </div>
+            <div class="p-3 bg-white rounded-lg border border-pharaoh-sandDark">
+              <strong class="text-pharaoh-dark block mb-1">Step 2. 關鍵停點</strong>
+              <span class="text-pharaoh-muted">指出受害者在「哪一個步驟」最應該停下來查證（加碼前/抵押房產前）。</span>
+            </div>
+            <div class="p-3 bg-white rounded-lg border border-pharaoh-sandDark">
+              <strong class="text-pharaoh-dark block mb-1">Step 3. 家人勸阻</strong>
+              <span class="text-pharaoh-muted">若是自己家人深陷其中，如何以同理心溝通而非指責，引導其看清局勢。</span>
+            </div>
+            <div class="p-3 bg-white rounded-lg border border-pharaoh-sandDark">
+              <strong class="text-pharaoh-dark block mb-1">Step 4. AI 提問查證</strong>
+              <span class="text-pharaoh-muted">輸入結構化 Prompt 要求 AI 分析「標的收益模型與下行風險」，破解話術。</span>
+            </div>
+            <div class="p-3 bg-white rounded-lg border border-pharaoh-sandDark">
+              <strong class="text-pharaoh-dark block mb-1">Step 5. 財商啟示</strong>
+              <span class="text-pharaoh-muted">真正的財富不是追求最高報酬，而是讓自己在任何階段都有能力安心生活。</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- PART B: 全真情境模擬考題庫 (Interactive Quiz with 6 Scenarios, 100 points) -->
+      <div class="bg-white p-6 sm:p-8 rounded-2xl border-2 border-pharaoh-sandDark pharaoh-shadow space-y-6">
+        <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2 pb-4 border-b border-pharaoh-sandDark">
+          <div>
+            <span class="badge-pharaoh px-2.5 py-0.5 rounded text-xs font-bold">全真情境考題</span>
+            <h3 class="text-xl font-bold text-pharaoh-dark mt-1 flex items-center space-x-2">
+              <i class="fa-solid fa-list-check text-pharaoh-orange"></i>
+              <span>防詐實戰情境模擬測驗（共 6 題 • 總分 100 分）</span>
+            </h3>
+          </div>
+          <div class="flex items-center space-x-3 text-xs">
+            <span class="font-bold text-pharaoh-dark">測驗得分：<span id="quiz-score-display" class="text-pharaoh-orange text-base">0</span> / 100</span>
+            <button onclick="resetQuiz()" class="text-pharaoh-muted hover:text-pharaoh-orange transition underline">重新測驗</button>
+          </div>
+        </div>
+
+        <div class="space-y-6" id="quiz-container">
+          
+          <!-- Q1 -->
+          <div class="p-5 bg-pharaoh-bg rounded-xl border border-pharaoh-sandDark space-y-3" id="q1-card">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-bold text-pharaoh-rust"><i class="fa-solid fa-circle-question mr-1"></i>第 1 題：LINE 飆股群組邀請</span>
+              <span class="text-pharaoh-muted">配分：15分</span>
+            </div>
+            <p class="text-sm font-semibold text-pharaoh-dark">
+              社群助理私訊你：「恭喜被選為機構VIP學員，點擊專屬連結下載內測APP即可優先配售主力飆股，保證獲利 30%，若虧損由基金會全額承擔。」你該如何處理？
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+              <button onclick="answerQuiz(1, 'A', false)" class="q-opt-1 text-left p-3 rounded-lg border border-slate-300 hover:border-pharaoh-orange text-xs text-pharaoh-text transition bg-white">
+                A. 先匯款 2 萬元小額測試，只要能順利出金再考慮加碼。
+              </button>
+              <button onclick="answerQuiz(1, 'B', true)" class="q-opt-1 text-left p-3 rounded-lg border border-slate-300 hover:border-pharaoh-orange text-xs text-pharaoh-text transition bg-white">
+                B. 標準假投資APP詐騙手法！絕不點擊下載，立即封鎖退群並向 165 檢舉。
+              </button>
+            </div>
+            <div id="q1-feedback" class="hidden p-3 rounded-lg text-xs leading-relaxed"></div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="p-5 bg-pharaoh-bg rounded-xl border border-pharaoh-sandDark space-y-3" id="q2-card">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-bold text-pharaoh-rust"><i class="fa-solid fa-circle-question mr-1"></i>第 2 題：AI 深偽視訊親友求援</span>
+              <span class="text-pharaoh-muted">配分：20分</span>
+            </div>
+            <p class="text-sm font-semibold text-pharaoh-dark">
+              在海外留學的兒子透過 LINE 視訊撥打過來，臉部與聲音完全一致，神色極為慌張表示在當地車禍撞傷人被警方拘留，需立刻匯款 50 萬至指定律師帳戶交保，否則將被移送監獄。你該怎麼做？
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+              <button onclick="answerQuiz(2, 'A', true)" class="q-opt-2 text-left p-3 rounded-lg border border-slate-300 hover:border-pharaoh-orange text-xs text-pharaoh-text transition bg-white">
+                A. 掛斷通話，直接撥打兒子原本的手機門號查證，並核對「家庭專屬通關密碼」。
+              </button>
+              <button onclick="answerQuiz(2, 'B', false)" class="q-opt-2 text-left p-3 rounded-lg border border-slate-300 hover:border-pharaoh-orange text-xs text-pharaoh-text transition bg-white">
+                B. 親眼看到視訊鏡頭且聲音無誤，救人第一，立刻衝去銀行臨櫃無折存款。
+              </button>
+            </div>
+            <div id="q2-feedback" class="hidden p-3 rounded-lg text-xs leading-relaxed"></div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="p-5 bg-pharaoh-bg rounded-xl border border-pharaoh-sandDark space-y-3" id="q3-card">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-bold text-pharaoh-rust"><i class="fa-solid fa-circle-question mr-1"></i>第 3 題：農會主管背書之民間高利借貸</span>
+              <span class="text-pharaoh-muted">配分：20分</span>
+            </div>
+            <p class="text-sm font-semibold text-pharaoh-dark">
+              多年熟識的好友介紹一筆「民間高利借貸項目」，宣稱由當地農會高層親自操盤，每月保證固定發放年息 15% 現金，並鼓吹你將自住無貸款的房產辦理二胎貸款 1,000 萬投入以賺取利差。你該如何決策？
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+              <button onclick="answerQuiz(3, 'A', false)" class="q-opt-3 text-left p-3 rounded-lg border border-slate-300 hover:border-pharaoh-orange text-xs text-pharaoh-text transition bg-white">
+                A. 既然有農會主管背書且朋友已領取利息兩年，拿房產借低利賺高息很划算。
+              </button>
+              <button onclick="answerQuiz(3, 'B', true)" class="q-opt-3 text-left p-3 rounded-lg border border-slate-300 hover:border-pharaoh-orange text-xs text-pharaoh-text transition bg-white">
+                B. 堅決拒絕！高於市場常規利率必有極高本金全損風險，且嚴禁動用自住房產二胎槓桿。
+              </button>
+            </div>
+            <div id="q3-feedback" class="hidden p-3 rounded-lg text-xs leading-relaxed"></div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="p-5 bg-pharaoh-bg rounded-xl border border-pharaoh-sandDark space-y-3" id="q4-card">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-bold text-pharaoh-rust"><i class="fa-solid fa-circle-question mr-1"></i>第 4 題：虛擬貨幣交易所出金保證金陷阱</span>
+              <span class="text-pharaoh-muted">配分：15分</span>
+            </div>
+            <p class="text-sm font-semibold text-pharaoh-dark">
+              在網路上某海外虛擬資產平台操作獲利 200 萬元，申請提領時客服表示：「因涉及跨境洗錢防制風控，需先額外補繳 20%（40萬元）保證金才能解凍出金。」你該如何處理？
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+              <button onclick="answerQuiz(4, 'A', true)" class="q-opt-4 text-left p-3 rounded-lg border border-slate-300 hover:border-pharaoh-orange text-xs text-pharaoh-text transition bg-white">
+                A. 立即停止匯款！正規金融機構絕不會要求預先繳納保證金才給出金，此為連環詐騙。
+              </button>
+              <button onclick="answerQuiz(4, 'B', false)" class="q-opt-4 text-left p-3 rounded-lg border border-slate-300 hover:border-pharaoh-orange text-xs text-pharaoh-text transition bg-white">
+                B. 為了拿回 200 萬獲利與本金，趕緊湊足 40 萬元匯入指定客服錢包。
+              </button>
+            </div>
+            <div id="q4-feedback" class="hidden p-3 rounded-lg text-xs leading-relaxed"></div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="p-5 bg-pharaoh-bg rounded-xl border border-pharaoh-sandDark space-y-3" id="q5-card">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-bold text-pharaoh-rust"><i class="fa-solid fa-circle-question mr-1"></i>第 5 題：假檢警公文與監管帳戶</span>
+              <span class="text-pharaoh-muted">配分：15分</span>
+            </div>
+            <p class="text-sm font-semibold text-pharaoh-dark">
+              自稱台北地檢署特偵組檢察官致電，出示印有你身分證字號與大頭照的「刑事拘票」，聲稱你涉及大型跨國洗錢案，要求你遵守「偵查不公開」不可告訴家人，並將存款全數交由專員進行「國家公證監管」。你該怎麼辦？
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+              <button onclick="answerQuiz(5, 'A', false)" class="q-opt-5 text-left p-3 rounded-lg border border-slate-300 hover:border-pharaoh-orange text-xs text-pharaoh-text transition bg-white">
+                A. 為了自清並避免被法院收押，配合指示至銀行提領現金交付公證專員。
+              </button>
+              <button onclick="answerQuiz(5, 'B', true)" class="q-opt-5 text-left p-3 rounded-lg border border-slate-300 hover:border-pharaoh-orange text-xs text-pharaoh-text transition bg-white">
+                B. 掛斷電話！司法檢警機關絕不會以電話辦案、絕不會要求監管帳戶或交付現金。
+              </button>
+            </div>
+            <div id="q5-feedback" class="hidden p-3 rounded-lg text-xs leading-relaxed"></div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="p-5 bg-pharaoh-bg rounded-xl border border-pharaoh-sandDark space-y-3" id="q6-card">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-bold text-pharaoh-rust"><i class="fa-solid fa-circle-question mr-1"></i>第 6 題：停車費/水電費欠繳釣魚簡訊</span>
+              <span class="text-pharaoh-muted">配分：15分</span>
+            </div>
+            <p class="text-sm font-semibold text-pharaoh-dark">
+              手機收到一則 SMS 簡訊：「【遠通電收/停管處】提醒您，您的車輛有 20 元路邊停車費已逾期，請於今日 24:00 前點擊連結繳費以防重罰：https://t.ly/etc-tw-pay」點入後跳出要求填寫信用卡號與 OTP。你該如何應對？
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+              <button onclick="answerQuiz(6, 'A', true)" class="q-opt-6 text-left p-3 rounded-lg border border-slate-300 hover:border-pharaoh-orange text-xs text-pharaoh-text transition bg-white">
+                A. 絕不點擊短網址！直接使用官方 App 或至超商多媒體機查詢，杜絕卡號遭盜刷。
+              </button>
+              <button onclick="answerQuiz(6, 'B', false)" class="q-opt-6 text-left p-3 rounded-lg border border-slate-300 hover:border-pharaoh-orange text-xs text-pharaoh-text transition bg-white">
+                B. 反正只有 20 元金額很小，直接輸入信用卡卡號與簡訊 OTP 扣款最省事。
+              </button>
+            </div>
+            <div id="q6-feedback" class="hidden p-3 rounded-lg text-xs leading-relaxed"></div>
+          </div>
+
+        </div>
+
+        <!-- Quiz Completion Certificate Banner -->
+        <div id="quiz-result-banner" class="hidden p-6 rounded-2xl bg-gradient-to-r from-amber-600 via-orange-600 to-yellow-600 text-white shadow-lg space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="px-3 py-1 bg-white/20 backdrop-blur rounded-full text-xs font-bold">防詐測驗評定結算</span>
+            <span id="final-score-badge" class="text-2xl font-black">100 / 100 分</span>
+          </div>
+          <h4 class="text-xl font-bold" id="final-cert-title">🎖️ 恭喜獲得：零信任金融安全防詐架構師認證！</h4>
+          <p class="text-xs sm:text-sm leading-relaxed opacity-95" id="final-cert-desc">
+            您已成功通過全部 6 大情境考驗，具備極高的認知防禦力與 165 打詐洞察力！面對深偽攻擊、假投資話術與釣魚連結皆能保持從容查證。
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CHAPTER 7: 個人與家庭金融安全承諾與落地守則 -->
+    <section id="sop-checklist" class="scroll-mt-24 space-y-8">
+      <div class="border-l-4 border-pharaoh-orange pl-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-pharaoh-orange">Chapter 7 • Governance & Action Protocol</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-pharaoh-dark mt-1">零信任金融安全承諾清單與財務月報範本</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-6 bg-white p-6 sm:p-8 rounded-2xl border border-pharaoh-sandDark pharaoh-shadow space-y-4">
+          <div class="flex justify-between items-center">
+            <h3 class="font-bold text-pharaoh-dark text-base flex items-center space-x-2 text-pharaoh-orange">
+              <i class="fa-solid fa-list-check"></i>
+              <span>個人與家庭零信任金融安全承諾</span>
+            </h3>
+            <span id="checked-count" class="text-xs badge-pharaoh px-2 py-0.5 rounded font-bold">0 / 5 已簽署</span>
+          </div>
+
+          <div class="space-y-3 text-xs sm:text-sm text-pharaoh-text">
+            <label class="flex items-start space-x-3 p-3 rounded-lg bg-pharaoh-bg border border-pharaoh-sandDark cursor-pointer hover:bg-orange-50/50 transition">
+              <input type="checkbox" class="mt-1 accent-pharaoh-orange rounded w-4 h-4 pledge-chk" onchange="updatePledge()">
+              <span><strong>絕不加入陌生 LINE 投資群組</strong>，不聽信任何網路「投顧老師」或「內線明牌」。</span>
+            </label>
+
+            <label class="flex items-start space-x-3 p-3 rounded-lg bg-pharaoh-bg border border-pharaoh-sandDark cursor-pointer hover:bg-orange-50/50 transition">
+              <input type="checkbox" class="mt-1 accent-pharaoh-orange rounded w-4 h-4 pledge-chk" onchange="updatePledge()">
+              <span><strong>絕不相信「保證獲利」與「無風險高回報」</strong>，牢記高報酬必然伴隨高下行風險。</span>
+            </label>
+
+            <label class="flex items-start space-x-3 p-3 rounded-lg bg-pharaoh-bg border border-pharaoh-sandDark cursor-pointer hover:bg-orange-50/50 transition">
+              <input type="checkbox" class="mt-1 accent-pharaoh-orange rounded w-4 h-4 pledge-chk" onchange="updatePledge()">
+              <span><strong>絕不點擊陌生連結下載非官方 APP</strong>，所有交易僅透過金管會監管之特許券商。</span>
+            </label>
+
+            <label class="flex items-start space-x-3 p-3 rounded-lg bg-pharaoh-bg border border-pharaoh-sandDark cursor-pointer hover:bg-orange-50/50 transition">
+              <input type="checkbox" class="mt-1 accent-pharaoh-orange rounded w-4 h-4 pledge-chk" onchange="updatePledge()">
+              <span><strong>單筆非日常支出超過 5 萬元必經 24 小時冷卻期</strong>，並與核心家人或第三方專家對話討論。</span>
+            </label>
+
+            <label class="flex items-start space-x-3 p-3 rounded-lg bg-pharaoh-bg border border-pharaoh-sandDark cursor-pointer hover:bg-orange-50/50 transition">
+              <input type="checkbox" class="mt-1 accent-pharaoh-orange rounded w-4 h-4 pledge-chk" onchange="updatePledge()">
+              <span><strong>重大投資前必問下行邊界：</strong>「若本金 100% 歸零，我的生活與家庭會變成什麼樣子？」</span>
+            </label>
+          </div>
+
+          <div id="pledge-status" class="p-3 bg-amber-50 rounded-lg border border-amber-200 text-xs text-pharaoh-amber text-center font-bold">
+            請勾選上方承諾項目以完成簽署
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 bg-white p-6 sm:p-8 rounded-2xl border border-pharaoh-sandDark pharaoh-shadow space-y-4">
+          <div class="flex justify-between items-center">
+            <h3 class="font-bold text-pharaoh-dark text-base flex items-center space-x-2 text-pharaoh-orange">
+              <i class="fa-solid fa-file-invoice-dollar"></i>
+              <span>標準化家庭財務月報表結構</span>
+            </h3>
+            <button onclick="copyAuditTemplate()" class="text-xs text-pharaoh-orange hover:text-pharaoh-rust font-bold">
+              <i class="fa-regular fa-copy mr-1"></i>複製報表結構
+            </button>
+          </div>
+
+          <div class="space-y-3 text-xs">
+            <div class="border border-pharaoh-sandDark rounded-xl overflow-hidden">
+              <div class="bg-pharaoh-bg p-2.5 font-bold text-pharaoh-dark flex justify-between">
+                <span>① 現金流收入面 (Inflow)</span>
+                <span class="text-pharaoh-orange">本業 + 股息 + 兼職</span>
+              </div>
+              <div class="p-3 bg-white space-y-1 text-pharaoh-muted">
+                <div class="flex justify-between"><span>• 主業薪資 / 顧問收入</span><span>$ --,---</span></div>
+                <div class="flex justify-between"><span>• 指數化 ETF 股息 / 利息</span><span>$ --,---</span></div>
+              </div>
+            </div>
+
+            <div class="border border-pharaoh-sandDark rounded-xl overflow-hidden">
+              <div class="bg-pharaoh-bg p-2.5 font-bold text-pharaoh-dark flex justify-between">
+                <span>② 支出分流面 (Outflow)</span>
+                <span class="text-pharaoh-orange">固定 + 變動 + 浪費錢包</span>
+              </div>
+              <div class="p-3 bg-white space-y-1 text-pharaoh-muted">
+                <div class="flex justify-between"><span>• 必要固定 (房貸/保險/稅務)</span><span>$ --,---</span></div>
+                <div class="flex justify-between"><span>• 日常變動 (飲食/交通/電信)</span><span>$ --,---</span></div>
+                <div class="flex justify-between"><span>• 浪費錢包 (無負罪感限額娛樂)</span><span>$ --,---</span></div>
+              </div>
+            </div>
+
+            <div class="border border-pharaoh-sandDark rounded-xl overflow-hidden">
+              <div class="bg-pharaoh-bg p-2.5 font-bold text-pharaoh-dark flex justify-between">
+                <span>③ 資產負債淨值 (Balance Sheet)</span>
+                <span class="text-pharaoh-orange">資產 - 負債 = 淨值</span>
+              </div>
+              <div class="p-3 bg-white space-y-1 text-pharaoh-muted">
+                <div class="flex justify-between"><span>• 緊急預備金池 (高利活存/定存)</span><span>$ --,---</span></div>
+                <div class="flex justify-between"><span>• 長期核心資產 (廣泛 ETF/不動產)</span><span>$ --,---</span></div>
+                <div class="flex justify-between"><span>• 負債總額 (房貸本金餘額)</span><span class="text-red-500">-$ --,---</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Author Dossier -->
+    <section class="bg-white p-8 sm:p-10 rounded-2xl border-2 border-pharaoh-sandDark pharaoh-shadow space-y-6">
+      <div class="flex flex-col sm:flex-row items-center gap-6 pb-6 border-b border-pharaoh-sandDark">
+        <div class="w-20 h-20 rounded-2xl pharaoh-gradient flex items-center justify-center text-white text-3xl font-black shadow-md flex-shrink-0">
+          HL
+        </div>
+        <div class="text-center sm:text-left space-y-1">
+          <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+            <h3 class="text-xl font-bold text-pharaoh-dark">Howard Liao Ph.D. (廖倫豪 博士)</h3>
+            <span class="badge-pharaoh px-2.5 py-0.5 rounded text-xs font-bold">著作發布人</span>
+          </div>
+          <p class="text-xs text-pharaoh-orange font-semibold">
+            Forward-Deployed AI Architect & Player-Coach C-Level Executive (CIO / CISO / CDAIO)
+          </p>
+          <p class="text-xs text-pharaoh-muted">
+            專長涵蓋企業級 AI 架構佈署、認知資安防禦、零信任治理與全維度個人/企業財務工程。
+          </p>
+        </div>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm text-pharaoh-text leading-relaxed">
+        <h4 class="font-bold text-pharaoh-dark text-base">結語：理財是為生活賦權，認知是最後的護城河</h4>
+        <p>
+          當我們在談論 AI 與財務時，許多人誤以為重點在於「尋找更快的暴富捷徑」。但真相恰恰相反：<strong>AI 最大的價值，是做為客觀鏡子幫我們看見金錢盲點、整理龐雜數據、過濾雜訊；而真正保護我們與家人的，始終是清醒的自我認知、合乎人性的預算紀律，以及面對未知詐騙時願意停下來求證的決策定力。</strong>
+        </p>
+        <p class="font-semibold text-pharaoh-orange">
+          投資前，不要只問「可以賺多少？」，更要問「如果失敗了，我的生活會變成什麼樣子？」。當你守住了底線，時間與複利自然會成為你最堅強的盟友。
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-pharaoh-dark text-slate-400 py-10 border-t border-slate-800 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center space-x-3">
+          <span class="w-7 h-7 rounded-md pharaoh-gradient flex items-center justify-center text-white font-bold text-xs">
+            <i class="fa-solid fa-feather-pointed"></i>
+          </span>
+          <span class="text-slate-200 font-bold">Project Scam • AI 智慧財務分析、認知防禦與全維金融防詐工程論</span>
+        </div>
+        <div class="text-slate-400">
+          報告人：Howard Liao Ph.D. (廖倫豪 博士) 版權所有 © 115年
+        </div>
+      </div>
+      <div class="border-t border-slate-800 pt-6 text-[11px] text-slate-500 flex flex-col sm:flex-row justify-between gap-2">
+        <span>依據 UNSGSA 普惠金融健康標準、認知心理學偏誤防禦與警政署 165 打詐架構重構著作。</span>
+        <span>GitHub Pages 部署：https://howardliao.github.io/Scam/</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    // Scroll Progress
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('scroll-progress').style.width = scrolled + '%';
+    });
+
+    // Layer selection logic
+    const layerData = {
+      1: {
+        title: "第 1 層 • 基礎層：現金流與緊急預備金池",
+        desc: "資產大廈的基石。缺乏流動性儲備的家庭，任何一次生病或失業都會被迫變賣核心資產或陷入高利借貸。核心在於：嚴格區分「固定支出」與「變動支出」，確保 3~6 個月月開支完全鎖定在無風險、高流動性工具中。",
+        tools: ["工具選擇：數位高利活存、階梯式定存、貨幣市場基金。", "容量標準：單身者 3 個月基本開銷；扶養老幼家庭 6~12 個月開銷。", "禁忌行為：切勿將緊急預備金投入股票當沖、期貨或承諾高息的民間借貸。"]
+      },
+      2: {
+        title: "第 2 層 • 防禦層：純保障型風險轉移與保險矩陣",
+        desc: "保險的本質是『財務防禦成本』，用微小且可預期的保費支出，鎖定極端罕見但具備毀滅性後果的家庭災難（如重大傷病、失能長照、家庭支柱早逝）。",
+        tools: ["核心險種：定期壽險（有扶養責任者）、雙實支實付醫療險、意外失能險、一次給付型重大傷病險。", "避坑守則：杜絕『還本型/終身儲蓄型』高保費低保障保單，將預算集中在槓桿最大的純保障型商品。", "定期檢視：每 3~5 年或家庭迎來新生兒/置產時，重新審視保額覆蓋度。"]
+      },
+      3: {
+        title: "第 3 層 • 成長層：全球指數化投資與資產配置",
+        desc: "以時間與全市場複利為核心。放棄挑選明牌個股的自大心態，擁抱廣泛市場指數（如台灣全市場、美國標普500、全球股市），透過定期定額參與人類生產力增長。",
+        tools: ["策略原則：長期持有、買進不賣出、股息再投入、每年進行一次股債再平衡。", "標的識讀：分辨『高股息 ETF (追求現金流但犧牲總報酬)』與『市值型 ETF (追求資產最大化)』。", "心理認知：市場大跌 20%~30% 是長期投資的正常定價過程，非系統性崩塌毋須恐慌殺跌。"]
+      },
+      4: {
+        title: "第 4 層 • 加值層：進階本業槓桿與財富增值",
+        desc: "在底層 3 層防禦與成長池徹底固化後，方可考慮的進階增值。主要包含個人本業專業溢價擴張、合法商業槓桿（如包租代管、優質不動產收租）。",
+        tools: ["風險控制：加值層資金占比嚴格控制在總流動資產的 5%~10% 以內。", "嚴格禁區：絕不利用自住房產辦理二胎抵押去借給他人牟取高利，避免本金連帶房產全盤皆輸。", "核心原則：唯有當你能承受 100% 虧損而不影響家庭生活時，才可參與此層級項目。"]
+      }
+    };
+
+    function selectLayer(lvl) {
+      const data = layerData[lvl];
+      document.getElementById('layer-title').innerText = data.title;
+      document.getElementById('layer-desc').innerText = data.desc;
+      
+      let listHtml = `<div class="font-bold text-pharaoh-orange">🔧 執行 SOP 與關鍵守則：</div><ul class="list-disc list-inside space-y-1 text-pharaoh-text">`;
+      data.tools.forEach(t => {
+        listHtml += `<li>${t}</li>`;
+      });
+      listHtml += `</ul>`;
+      
+      const content = document.getElementById('layer-detail-box');
+      content.querySelector('.bg-pharaoh-bg').innerHTML = listHtml;
+    }
+
+    // Health Calculator Logic
+    function calculateHealthScore() {
+      const savings = parseInt(document.getElementById('savings-rate').value);
+      const emergency = parseInt(document.getElementById('emergency-fund').value);
+      const knowledge = parseInt(document.getElementById('knowledge').value);
+      const defense = parseInt(document.getElementById('defense').value);
+
+      document.getElementById('savings-rate-val').innerText = savings + '%';
+      document.getElementById('emergency-fund-val').innerText = emergency + ' 個月';
+      document.getElementById('knowledge-val').innerText = knowledge + ' 分';
+      document.getElementById('defense-val').innerText = defense + ' 分';
+
+      let score = 0;
+      score += Math.max(0, Math.min(30, (savings + 20) * 0.35));
+      score += Math.min(30, emergency * 4.5);
+      score += knowledge * 2.0;
+      score += defense * 2.0;
+
+      score = Math.round(Math.min(100, Math.max(10, score)));
+      document.getElementById('score-number').innerText = score;
+
+      const gradeEl = document.getElementById('score-grade');
+      const adviceEl = document.getElementById('score-advice');
+
+      if (score >= 80) {
+        gradeEl.innerText = "等級：穩健卓越 • 高抗詐高韌性";
+        gradeEl.className = "text-sm font-bold text-green-700";
+        adviceEl.innerText = "極佳的財務結構！您的緊急流動性充裕且具備敏銳的認知防禦。建議持續落實指數化資產配置，定期檢視保單條款並守護家人防詐邊界。";
+      } else if (score >= 60) {
+        gradeEl.innerText = "等級：結構良好 • 需強化下行防禦";
+        gradeEl.className = "text-sm font-bold text-pharaoh-amber";
+        adviceEl.innerText = "基本收支與觀念良好，但在緊急備用金水位或防詐冷卻期上仍有優化空間。建議將預備金補足至 6 個月，並嚴格遵循單筆大額支出 24 小時冷卻協議。";
+      } else {
+        gradeEl.innerText = "等級：高脆弱警示 • 需即刻重構預算";
+        gradeEl.className = "text-sm font-bold text-red-600";
+        adviceEl.innerText = "財務緩衝池不足，極易在面臨意外或金融誘惑時陷入高利貸或流動性斷裂陷阱。請立即啟動 50/30/20 預算修復，全面凍結非必要娛樂開銷。";
+      }
+    }
+
+    // Prompt Copy Helper
+    function copyPrompt(id) {
+      const text = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById(id + '-btn');
+        const old = btn.innerText;
+        btn.innerText = "已複製！";
+        setTimeout(() => { btn.innerText = old; }, 2000);
+      });
+    }
+
+    // Copy audit template
+    function copyAuditTemplate() {
+      const template = `=== 家庭財務月報審計範本 (Howard Liao Ph.D. 架構) ===
+一、月度現金流 (Cash Flow)
+- 主業與薪資收入：$
+- 被動股息與兼職：$
+- 月總收入 (A)：$
+
+二、支出分類盤點
+- 固定必要支出 (房貸/保險/稅務)：$
+- 浮動生活支出 (飲食/交通/水電)：$
+- 浪費錢包限額 (無負罪感娛樂)：$
+- 月總支出 (B)：$
+- 本月淨結餘 (A - B)：$ (結餘率： %)
+
+三、資產負債總覽
+- 緊急預備金水位 (高利活存/定存)：$ (可支應__個月)
+- 核心成長資產 (市值型/高股息 ETF)：$
+- 不動產估值淨值：$
+- 負債總額 (房貸/信貸餘額)：$
+- 家庭總淨值：$`;
+      navigator.clipboard.writeText(template).then(() => {
+        alert("已成功複製「家庭財務月報表結構」至剪貼簿！");
+      });
+    }
+
+    // ==========================================
+    // QUIZ SYSTEM LOGIC (6 Questions, 100 points)
+    // ==========================================
+    const quizState = {
+      1: { answered: false, correct: false, score: 15 },
+      2: { answered: false, correct: false, score: 20 },
+      3: { answered: false, correct: false, score: 20 },
+      4: { answered: false, correct: false, score: 15 },
+      5: { answered: false, correct: false, score: 15 },
+      6: { answered: false, correct: false, score: 15 }
+    };
+
+    const quizExplanations = {
+      1: {
+        correct: "<strong>✅ 判定正確 (+15分)！</strong><br>這是典型的假投資 APP 與保證獲利騙局。所有非特許非監管交易平台，前期小額出金皆為誘餌，切勿投入任何資金。",
+        wrong: "<strong>❌ 判定錯誤 (0分)！</strong><br>「小額嘗試」正中詐騙集團下懷！前期獲利與出金全是後台人為操縱數字，目的是引誘你後續匯入數百萬存款甚至貸款。"
+      },
+      2: {
+        correct: "<strong>✅ 判定正確 (+20分)！</strong><br>AI Deepfake 能夠即時生成親友面孔與擬真聲紋。遇到突發緊急借款，掛斷電話透過原本管道回撥或核對「家庭專屬通關密碼」是唯一能破解深偽攻擊的零信任手段。",
+        wrong: "<strong>❌ 判定錯誤 (0分)！</strong><br>「眼見為憑」在 AI 時代已徹底失效！深偽技術可在數秒內模擬任何人的語音與視訊，未經二度求證直接臨櫃匯款將造成永久財損。"
+      },
+      3: {
+        correct: "<strong>✅ 判定正確 (+20分)！</strong><br>年息 15% 遠超無風險利率常理，必為龐氏吸金或違法放貸。自住房產為家庭生存之底線，絕不能做為投機與高風險借貸的抵押品。",
+        wrong: "<strong>❌ 判定錯誤 (0分)！</strong><br>「朋友領息兩年」正是龐氏騙局最危險的蓄水期！一旦負責人捲款失聯，二胎房貸本息將直接導致自住房產面臨法拍破產。"
+      },
+      4: {
+        correct: "<strong>✅ 判定正確 (+15分)！</strong><br>正規金融券商與特許交易所出金只需扣除手續費，絕不會要求預先額外匯款繳交「解凍保證金」。要求補繳保證金皆為二次榨取手法。",
+        wrong: "<strong>❌ 判定錯誤 (0分)！</strong><br>「補繳保證金」是詐騙集團在失聯前的最後一次榨取！一旦匯入 40 萬，對方會再以「稅金」、「驗證費」為由繼續索討，本金絕不可能拿回。"
+      },
+      5: {
+        correct: "<strong>✅ 判定正確 (+15分)！</strong><br>司法檢警機關絕不會要求「監管帳戶」、絕不會以 LINE 傳送拘票傳票、絕不會要求提領現金交給公證專員。「偵查不公開」是規範司法人員而非限制民眾求證。",
+        wrong: "<strong>❌ 判定錯誤 (0分)！</strong><br>檢察官絕不會派員在路邊收取現金或要求提供存摺印章。這是假檢警詐騙之標準套路。"
+      },
+      6: {
+        correct: "<strong>✅ 判定正確 (+15分)！</strong><br>公共事業與停管處不會以包含短網址的簡訊要求立即線上刷卡。切勿在非官方網頁輸入信用卡資訊與 OTP 驗證碼。",
+        wrong: "<strong>❌ 判定錯誤 (0分)！</strong><br>短網址高仿網頁會直接側錄你的信用卡號、有效期限、安全碼與即時 OTP，輸入後會立即遭到境外大額盜刷。"
+      }
+    };
+
+    function answerQuiz(qNum, choice, isCorrect) {
+      if (quizState[qNum].answered) return;
+      
+      quizState[qNum].answered = true;
+      quizState[qNum].correct = isCorrect;
+
+      const fb = document.getElementById(`q${qNum}-feedback`);
+      fb.classList.remove('hidden');
+
+      const card = document.getElementById(`q${qNum}-card`);
+      const buttons = card.querySelectorAll(`.q-opt-${qNum}`);
+      
+      buttons.forEach(btn => {
+        btn.disabled = true;
+        btn.classList.add('opacity-70', 'cursor-not-allowed');
+      });
+
+      if (isCorrect) {
+        fb.className = "p-3 rounded-lg text-xs leading-relaxed bg-green-100 text-green-900 border border-green-300";
+        fb.innerHTML = quizExplanations[qNum].correct;
+      } else {
+        fb.className = "p-3 rounded-lg text-xs leading-relaxed bg-red-100 text-red-900 border border-red-300";
+        fb.innerHTML = quizExplanations[qNum].wrong;
+      }
+
+      updateTotalQuizScore();
+    }
+
+    function updateTotalQuizScore() {
+      let total = 0;
+      let allAnswered = true;
+
+      for (let i = 1; i <= 6; i++) {
+        if (quizState[i].answered) {
+          if (quizState[i].correct) total += quizState[i].score;
+        } else {
+          allAnswered = false;
+        }
+      }
+
+      document.getElementById('quiz-score-display').innerText = total;
+
+      if (allAnswered) {
+        const banner = document.getElementById('quiz-result-banner');
+        banner.classList.remove('hidden');
+        document.getElementById('final-score-badge').innerText = `${total} / 100 分`;
+
+        const titleEl = document.getElementById('final-cert-title');
+        const descEl = document.getElementById('final-cert-desc');
+
+        if (total >= 85) {
+          titleEl.innerText = "🎖️ 恭喜獲得：零信任金融安全防詐架構師認證！";
+          descEl.innerText = "您以優異成績通過全部 6 大情境考驗！具備 CISO 等級之全維防詐認知與 S-T-O-P 阻斷定力，能徹底守護個人與家庭資產邊界。";
+        } else if (total >= 60) {
+          titleEl.innerText = "🛡️ 測驗完成：具備基礎防詐意識，仍需強化深偽與二胎風險斷點！";
+          descEl.innerText = "您的基礎警覺良好，但在面對熟人背書或 AI 聲紋視訊時仍有潛在盲點。請牢記：眼見不為憑，遇到重大金流務必落實 24 小時冷卻期。";
+        } else {
+          titleEl.innerText = "⚠️ 高風險警示：您的認知防禦存在破口，易受社交工程誘導！";
+          descEl.innerText = "您在多個情境中落入詐騙集團圈套。請務必將本頁之 STOP 協議與 165 打詐工具箱加入書籤，並與家人共同研讀。";
+        }
+      }
+    }
+
+    function resetQuiz() {
+      for (let i = 1; i <= 6; i++) {
+        quizState[i].answered = false;
+        quizState[i].correct = false;
+        const fb = document.getElementById(`q${i}-feedback`);
+        fb.classList.add('hidden');
+        fb.innerHTML = '';
+        const card = document.getElementById(`q${i}-card`);
+        const buttons = card.querySelectorAll(`.q-opt-${i}`);
+        buttons.forEach(btn => {
+          btn.disabled = false;
+          btn.classList.remove('opacity-70', 'cursor-not-allowed');
+        });
+      }
+      document.getElementById('quiz-score-display').innerText = '0';
+      document.getElementById('quiz-result-banner').classList.add('hidden');
+    }
+
+    // Pledge tracker
+    function updatePledge() {
+      const chks = document.querySelectorAll('.pledge-chk');
+      let count = 0;
+      chks.forEach(c => { if (c.checked) count++; });
+      document.getElementById('checked-count').innerText = `${count} / 5 已簽署`;
+      
+      const st = document.getElementById('pledge-status');
+      if (count === 5) {
+        st.className = "p-3 bg-green-100 rounded-lg border border-green-300 text-xs text-green-800 text-center font-bold";
+        st.innerHTML = "🎉 恭喜！您已完成全套「零信任個人與家庭金融安全承諾」，已建立堅固的認知護城河！";
+      } else {
+        st.className = "p-3 bg-amber-50 rounded-lg border border-amber-200 text-xs text-pharaoh-amber text-center font-bold";
+        st.innerText = `目前已簽署 ${count} 項，請全部勾選完成自我安全固化。`;
+      }
+    }
+  </script>
+</body>
+</html>
